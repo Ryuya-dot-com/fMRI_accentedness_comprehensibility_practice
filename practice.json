@@ -1,6 +1,6 @@
 {
   "version": "joystick-practice-20261111",
-  "instruction_version": "prerating_ja_v1",
+  "instruction_version": "prerating_ja_v2",
   "scale_max": 5,
   "rating_s": 3.0,
   "audio_gain": 0.3,
@@ -139,7 +139,7 @@
         "task": "accentedness",
         "pool": "P2",
         "left": "訛りが強い",
-        "right": "ほとんどない",
+        "right": "訛りがない",
         "trials": [
           {
             "file": "audio/practice_03.wav",
@@ -174,7 +174,7 @@
         "task": "accentedness",
         "pool": "P2",
         "left": "訛りが強い",
-        "right": "ほとんどない",
+        "right": "訛りがない",
         "trials": [
           {
             "file": "audio/practice_03.wav",
@@ -275,7 +275,7 @@
         "task": "accentedness",
         "pool": "P1",
         "left": "訛りが強い",
-        "right": "ほとんどない",
+        "right": "訛りがない",
         "trials": [
           {
             "file": "audio/practice_07.wav",
@@ -310,7 +310,7 @@
         "task": "accentedness",
         "pool": "P1",
         "left": "訛りが強い",
-        "right": "ほとんどない",
+        "right": "訛りがない",
         "trials": [
           {
             "file": "audio/practice_07.wav",
@@ -410,7 +410,7 @@
       {
         "task": "accentedness",
         "pool": "P2",
-        "left": "ほとんどない",
+        "left": "訛りがない",
         "right": "訛りが強い",
         "trials": [
           {
@@ -445,7 +445,7 @@
       {
         "task": "accentedness",
         "pool": "P2",
-        "left": "ほとんどない",
+        "left": "訛りがない",
         "right": "訛りが強い",
         "trials": [
           {
@@ -546,7 +546,7 @@
       {
         "task": "accentedness",
         "pool": "P1",
-        "left": "ほとんどない",
+        "left": "訛りがない",
         "right": "訛りが強い",
         "trials": [
           {
@@ -581,7 +581,7 @@
       {
         "task": "accentedness",
         "pool": "P1",
-        "left": "ほとんどない",
+        "left": "訛りがない",
         "right": "訛りが強い",
         "trials": [
           {

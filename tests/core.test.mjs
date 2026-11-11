@@ -52,6 +52,9 @@ test('eight forms contain each of the ten intact practice sounds once and have t
     const comp = blocks.find(b=>b.task==='comprehensibility');
     assert.equal(comp.pool,Math.floor(i/2)%2 === 0 ? 'P1':'P2');
     assert.equal(comp.left,i<4 ? '理解しにくい':'理解しやすい');
+    const accent = blocks.find(b=>b.task==='accentedness');
+    assert.equal(accent.left,i<4 ? '訛りが強い':'訛りがない');
+    assert.equal(accent.right,i<4 ? '訛りがない':'訛りが強い');
     const files = blocks.flatMap(b=>b.trials.map(t=>t.file));
     assert.equal(files.length,10); assert.equal(new Set(files).size,10);
     for (const b of blocks) {
