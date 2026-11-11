@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ジョイスティック練習</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section id="welcome">
+      <form id="start-form">
+        <label for="participant">参加者ID</label>
+        <input id="participant" type="text" inputmode="numeric" pattern="[0-9]+" autocomplete="off" required aria-describedby="start-error">
+        <p id="start-error" role="alert"></p>
+        <button id="start" type="submit">次へ</button>
+      </form>
+    </section>
+    <section id="message" hidden>
+      <h1 id="message-title"></h1>
+      <p id="message-body" class="copy"></p>
+      <p id="message-action" class="action"></p>
+      <button id="restart" type="button" hidden>最初からやり直す</button>
+    </section>
+    <section id="listening" hidden aria-label="音声を聞いてください">
+      <svg class="speaker" viewBox="0 0 100 100" aria-hidden="true"><path d="M12 37H30L54 18V82L30 63H12Z" fill="currentColor"/><path d="M66 34Q82 50 66 66M77 22Q105 50 77 78" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>
+    </section>
+    <section id="fixation" hidden><span class="cross" aria-label="お待ちください">＋</span><p id="feedback"></p></section>
+    <section id="rating" hidden>
+      <h1 id="task-title"></h1>
+      <div id="scale" role="group" aria-label="5段階の評価">
+        <span data-value="1">1</span><span data-value="2">2</span><span data-value="3">3</span><span data-value="4">4</span><span data-value="5">5</span>
+      </div>
+      <div class="endpoints"><span id="left-label"></span><span id="right-label"></span></div>
+      <p class="hint">左右に1段階ずつ選び、人差し指のボタンで確定</p>
+    </section>
+    <noscript>JavaScriptを有効にして、ページを開き直してください。</noscript>
+  </main>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>

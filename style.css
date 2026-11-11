@@ -1,0 +1,29 @@
+:root { color-scheme: dark; font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif; background: #000; color: #fff; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+main { min-height: 100svh; display: grid; place-items: center; padding: 32px 20px; }
+section { width: min(1080px, 100%); text-align: center; }
+h1 { margin: 0 0 32px; font-size: clamp(25px, 3.2vw, 38px); font-weight: 500; }
+p { line-height: 1.65; }
+.copy { white-space: pre-line; font-size: clamp(18px, 2.2vw, 26px); }
+.action, .hint { font-size: clamp(17px, 2vw, 23px); margin-top: 28px; }
+form { width: min(340px, 100%); margin: auto; text-align: left; }
+label { display: block; font-size: 24px; margin-bottom: 14px; }
+input, button { font: inherit; font-size: 21px; border: 1px solid #aaa; border-radius: 4px; }
+input { width: 100%; background: #111; color: #fff; padding: 12px; }
+button { padding: 12px 28px; background: #eee; color: #111; cursor: pointer; min-height: 48px; }
+button:disabled { opacity: .5; cursor: wait; }
+button:focus-visible, input:focus-visible { outline: 3px solid #8ebeff; outline-offset: 5px; }
+#start-error { color: #ffc3ba; font-size: 18px; }
+.speaker { width: clamp(120px, 20vw, 240px); }
+.cross { font-size: 64px; }
+#feedback { font-size: 23px; }
+#scale { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; width: min(680px, 100%); margin: 50px auto 20px; }
+#scale span { border: 2px solid #eee; min-height: 70px; padding: 20px 8px; font-size: 30px; }
+#scale .selected { background: #ddd; color: #000; }
+#scale .confirmed { background: #52bb72; color: #000; border-color: #52bb72; }
+.endpoints { display: flex; justify-content: space-between; gap: 32px; width: min(800px, 100%); margin: auto; font-size: clamp(18px, 2.2vw, 26px); }
+.endpoints span { max-width: 45%; }
+#left-label { text-align: left; }
+#right-label { text-align: right; }
