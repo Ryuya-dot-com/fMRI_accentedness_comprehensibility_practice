@@ -1,32 +1,40 @@
 {
-  "recorded_at": "2026-11-11T10:19:56.959218+00:00",
-  "version": "joystick-practice-20261111",
+  "recorded_at": "2026-11-13T08:31:49.955231+00:00",
+  "version": "joystick-practice-20261113",
   "instruction_version": "prerating_ja_v2",
-  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/0cee22cba80de03509840ebe32b1a4dff6e0dc5e/verification.json",
+  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/a2168b909a1c7fb6cf55696000f2cde84866e46f/verification.json",
   "changes": [
-    "User-requested accentedness endpoint: 訛りがない.",
-    "All eight Web forms match current MRI endpoints."
+    "Separate task links select only accentedness or comprehensibility.",
+    "Each task uses all 10 approved practice sounds once; completing both tasks gives two presentations of each sound.",
+    "The combined URL runs 10 sounds per task in the ID-assigned task order.",
+    "MRI scale directions are preserved; both practice pools now appear in each Web task. MRI presentation code and plans are unchanged."
   ],
   "source_sha256": {
-    "index.html": "967395b1161da1b722d74b368a2e20218836e0f4b239b417578c43a5d032ddc1",
+    "index.html": "5d6b8aa06862614ee2182eb7d8e4cb71361b85ff5b121826e25ebdac364bf827",
     "style.css": "11e6871d3e99f92544ea8063088e76b68ecca373406f8eb06713c3472bbf13be",
-    "app.mjs": "b7dfeae4551fcb549e9c0793297fe06704f9e41d874d3f358ab11fa43da24529",
+    "app.mjs": "571c0d5b755fc13edb767c7e7bfbdc01aa6742b5e3927fc39b43aa68b8847150",
     "core.mjs": "85e203c2dd67a3617308978c206607ae83235b478d6f7c699c0af08ab817ddcb",
-    "practice.json": "d74f7f2cc51c1329d494d5ab7f5eef73adcae0c60b7dc86f5ff040c4f1b43d47"
+    "practice.json": "643334c7764e214a84b64181d949fe9421430e65a775bb1430bf532acf2aaa01"
   },
   "verification": {
-    "node_tests": 6,
+    "node_tests": 8,
     "node_test_failures": 0,
-    "eight_forms_match_MRI": true,
-    "MRI_instruction_wording_test": "passed; all 8 cells / 48 runs; only endpoints and practice-text source-table hash differ from historical plans",
-    "MRI_rating_scale_test": "passed; 128 IDs, canonical scores, saved and legacy labels",
-    "MRI_old_plans_preserved": true,
-    "all_10_wav_hashes_checked": true
+    "separate_task_sessions": 16,
+    "separate_task_trials": 160,
+    "all_8_ID_assignments_both_tasks_complete_after_10_trials": true,
+    "combined_link_20_trials_both_confirm_buttons": true,
+    "all_10_wav_hashes_checked": true,
+    "each_task_all_10_sounds_once_and_both_tasks_twice": true,
+    "Japanese_first_and_no_3_consecutive_groups_all_blocks": true,
+    "MRI_source_comparison": "All 8 forms / 16 blocks: endpoints and original audio-specific delay/ITI match build_runs(practice); each task concatenates its original five trials and the other five.",
+    "invalid_task_links_rejected": true,
+    "interruption_and_missing_audio_tests": "passed",
+    "chrome_UI_smoke": "Both separate-link start titles and ID fields verified. Accentedness ID 005 reached the correct task instructions and Y endpoints with simulated calibration. Browser smoke is not a full 10-trial real-time run; full completion was tested with simulated clocks in Node."
   },
   "evidence_reuse": {
-    "app_core_html_css_unchanged": true,
-    "prior_16000_update_comparison_and_full_browser_audio_run": "See previous_verification; input logic unchanged.",
-    "current_wording_real_device_check_completed": false
+    "core_mjs_style_css_and_audio_unchanged": true,
+    "prior_16000_update_comparison": "See previous_verification and its predecessor; selection and calibration logic are unchanged.",
+    "MRI_tests_not_rerun": "MRI code/config/plans unchanged; checked all eight Web form endpoint mappings directly against the existing MRI builder."
   },
   "wording": {
     "source": "Pre-rating task.docx definitions plus explicit user endpoint change, 2026-11-11",
@@ -45,12 +53,14 @@
   },
   "not_verified": [
     "physical Trainer and browser mapping on laboratory PC",
+    "full ten-trial real-time browser session for the new separate-link flow",
     "other browsers and operating systems",
     "physical audio onset, sound pressure, MRI pulses or synchronization"
   ],
   "publication": {
     "repository": "Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice",
     "url": "https://ryuya-dot-com.github.io/fMRI_accentedness_comprehensibility_practice/",
-    "verification_stage": "Local tests passed; publication pending"
+    "verification_stage": "Prepublication checks passed. Deployment evidence is recorded locally after publication.",
+    "public_verification_record": "tests/artifacts/separate-links-public-verification.json"
   }
 }

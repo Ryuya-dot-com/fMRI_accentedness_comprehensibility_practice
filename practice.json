@@ -1,5 +1,5 @@
 {
-  "version": "joystick-practice-20261111",
+  "version": "joystick-practice-20261113",
   "instruction_version": "prerating_ja_v2",
   "scale_max": 5,
   "rating_s": 3.0,
@@ -104,7 +104,7 @@
     [
       {
         "task": "comprehensibility",
-        "pool": "P1",
+        "pool": "P1+P2",
         "left": "理解しにくい",
         "right": "理解しやすい",
         "trials": [
@@ -132,12 +132,37 @@
             "file": "audio/practice_01.wav",
             "delay_s": 0.5,
             "iti_s": 2
+          },
+          {
+            "file": "audio/practice_03.wav",
+            "delay_s": 0.5,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_10.wav",
+            "delay_s": 0.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "delay_s": 2.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_08.wav",
+            "delay_s": 2.0,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "delay_s": 1.5,
+            "iti_s": 2.3
           }
         ]
       },
       {
         "task": "accentedness",
-        "pool": "P2",
+        "pool": "P1+P2",
         "left": "訛りが強い",
         "right": "訛りがない",
         "trials": [
@@ -165,6 +190,31 @@
             "file": "audio/practice_09.wav",
             "delay_s": 1.5,
             "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "delay_s": 0.5,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_04.wav",
+            "delay_s": 2.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_05.wav",
+            "delay_s": 1.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "delay_s": 2.0,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "delay_s": 0.5,
+            "iti_s": 2
           }
         ]
       }
@@ -172,7 +222,7 @@
     [
       {
         "task": "accentedness",
-        "pool": "P2",
+        "pool": "P1+P2",
         "left": "訛りが強い",
         "right": "訛りがない",
         "trials": [
@@ -200,12 +250,37 @@
             "file": "audio/practice_02.wav",
             "delay_s": 2.5,
             "iti_s": 2
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "delay_s": 2.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_04.wav",
+            "delay_s": 0.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_05.wav",
+            "delay_s": 1.5,
+            "iti_s": 3.4
           }
         ]
       },
       {
         "task": "comprehensibility",
-        "pool": "P1",
+        "pool": "P1+P2",
         "left": "理解しにくい",
         "right": "理解しやすい",
         "trials": [
@@ -233,6 +308,31 @@
             "file": "audio/practice_05.wav",
             "delay_s": 1.5,
             "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_03.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "delay_s": 0.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_10.wav",
+            "delay_s": 1.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_08.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "delay_s": 2.5,
+            "iti_s": 2
           }
         ]
       }
@@ -240,7 +340,7 @@
     [
       {
         "task": "comprehensibility",
-        "pool": "P2",
+        "pool": "P1+P2",
         "left": "理解しにくい",
         "right": "理解しやすい",
         "trials": [
@@ -268,12 +368,37 @@
             "file": "audio/practice_09.wav",
             "delay_s": 0.5,
             "iti_s": 2
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_05.wav",
+            "delay_s": 2.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "delay_s": 0.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_04.wav",
+            "delay_s": 1.5,
+            "iti_s": 2
           }
         ]
       },
       {
         "task": "accentedness",
-        "pool": "P1",
+        "pool": "P1+P2",
         "left": "訛りが強い",
         "right": "訛りがない",
         "trials": [
@@ -300,6 +425,31 @@
           {
             "file": "audio/practice_04.wav",
             "delay_s": 1.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_03.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "delay_s": 1.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_10.wav",
+            "delay_s": 2.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_08.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "delay_s": 0.5,
             "iti_s": 2
           }
         ]
@@ -308,7 +458,7 @@
     [
       {
         "task": "accentedness",
-        "pool": "P1",
+        "pool": "P1+P2",
         "left": "訛りが強い",
         "right": "訛りがない",
         "trials": [
@@ -336,12 +486,37 @@
             "file": "audio/practice_05.wav",
             "delay_s": 0.5,
             "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_03.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "delay_s": 2.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_08.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "delay_s": 0.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_10.wav",
+            "delay_s": 1.5,
+            "iti_s": 2.3
           }
         ]
       },
       {
         "task": "comprehensibility",
-        "pool": "P2",
+        "pool": "P1+P2",
         "left": "理解しにくい",
         "right": "理解しやすい",
         "trials": [
@@ -369,6 +544,31 @@
             "file": "audio/practice_10.wav",
             "delay_s": 1.5,
             "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "delay_s": 2.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_04.wav",
+            "delay_s": 1.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_05.wav",
+            "delay_s": 0.5,
+            "iti_s": 2.3
           }
         ]
       }
@@ -376,7 +576,7 @@
     [
       {
         "task": "comprehensibility",
-        "pool": "P1",
+        "pool": "P1+P2",
         "left": "理解しやすい",
         "right": "理解しにくい",
         "trials": [
@@ -404,12 +604,37 @@
             "file": "audio/practice_05.wav",
             "delay_s": 0.5,
             "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_08.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "delay_s": 2.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_10.wav",
+            "delay_s": 1.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_03.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "delay_s": 0.5,
+            "iti_s": 2.3
           }
         ]
       },
       {
         "task": "accentedness",
-        "pool": "P2",
+        "pool": "P1+P2",
         "left": "訛りがない",
         "right": "訛りが強い",
         "trials": [
@@ -435,6 +660,31 @@
           },
           {
             "file": "audio/practice_02.wav",
+            "delay_s": 0.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_04.wav",
+            "delay_s": 2.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "delay_s": 1.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_05.wav",
             "delay_s": 0.5,
             "iti_s": 2.3
           }
@@ -444,7 +694,7 @@
     [
       {
         "task": "accentedness",
-        "pool": "P2",
+        "pool": "P1+P2",
         "left": "訛りがない",
         "right": "訛りが強い",
         "trials": [
@@ -472,12 +722,37 @@
             "file": "audio/practice_09.wav",
             "delay_s": 0.5,
             "iti_s": 2
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "delay_s": 0.5,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_04.wav",
+            "delay_s": 1.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "delay_s": 0.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "delay_s": 2.0,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_05.wav",
+            "delay_s": 2.5,
+            "iti_s": 2
           }
         ]
       },
       {
         "task": "comprehensibility",
-        "pool": "P1",
+        "pool": "P1+P2",
         "left": "理解しやすい",
         "right": "理解しにくい",
         "trials": [
@@ -505,6 +780,31 @@
             "file": "audio/practice_05.wav",
             "delay_s": 2.5,
             "iti_s": 2
+          },
+          {
+            "file": "audio/practice_03.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "delay_s": 1.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_10.wav",
+            "delay_s": 2.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_08.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "delay_s": 0.5,
+            "iti_s": 2
           }
         ]
       }
@@ -512,7 +812,7 @@
     [
       {
         "task": "comprehensibility",
-        "pool": "P2",
+        "pool": "P1+P2",
         "left": "理解しやすい",
         "right": "理解しにくい",
         "trials": [
@@ -540,12 +840,37 @@
             "file": "audio/practice_02.wav",
             "delay_s": 0.5,
             "iti_s": 2
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_04.wav",
+            "delay_s": 2.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "delay_s": 1.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_05.wav",
+            "delay_s": 0.5,
+            "iti_s": 3.4
           }
         ]
       },
       {
         "task": "accentedness",
-        "pool": "P1",
+        "pool": "P1+P2",
         "left": "訛りがない",
         "right": "訛りが強い",
         "trials": [
@@ -573,6 +898,31 @@
             "file": "audio/practice_05.wav",
             "delay_s": 0.5,
             "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_03.wav",
+            "delay_s": 0.5,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "delay_s": 2.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_10.wav",
+            "delay_s": 1.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_08.wav",
+            "delay_s": 2.0,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "delay_s": 0.5,
+            "iti_s": 2
           }
         ]
       }
@@ -580,7 +930,7 @@
     [
       {
         "task": "accentedness",
-        "pool": "P1",
+        "pool": "P1+P2",
         "left": "訛りがない",
         "right": "訛りが強い",
         "trials": [
@@ -608,12 +958,37 @@
             "file": "audio/practice_01.wav",
             "delay_s": 0.5,
             "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_08.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "delay_s": 2.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_10.wav",
+            "delay_s": 1.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_03.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "delay_s": 0.5,
+            "iti_s": 3.4
           }
         ]
       },
       {
         "task": "comprehensibility",
-        "pool": "P2",
+        "pool": "P1+P2",
         "left": "理解しやすい",
         "right": "理解しにくい",
         "trials": [
@@ -641,6 +1016,31 @@
             "file": "audio/practice_09.wav",
             "delay_s": 0.5,
             "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_05.wav",
+            "delay_s": 1.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_04.wav",
+            "delay_s": 2.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "delay_s": 0.5,
+            "iti_s": 2.3
           }
         ]
       }

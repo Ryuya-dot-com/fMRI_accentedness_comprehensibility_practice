@@ -39,12 +39,13 @@ tasks = {name:dict(title=mri.LABELS[name][0], definition=eval(
 forms = []
 for participant in range(1, 9):
     plans = mri.build_runs(rows, cfg, str(participant), 'practice')
-    forms.append([dict(task=p['task'], pool=p['sentence_list'],
+    forms.append([dict(task=p['task'], pool='P1+P2',
                        left=p['rating_left_label'], right=p['rating_right_label'],
                        trials=[dict(file=files[t['stimulus_id']],
                                     delay_s=t['rating_delay_s'], iti_s=t['jitter_s'])
-                               for t in p['trials']]) for p in plans])
-payload = dict(version='joystick-practice-20261111', instruction_version=mri.INSTRUCTION_VERSION, scale_max=5,
+                               for source in [p] + [other for other in plans if other is not p]
+                               for t in source['trials']]) for p in plans])
+payload = dict(version='joystick-practice-20261113', instruction_version=mri.INSTRUCTION_VERSION, scale_max=5,
                rating_s=cfg['rating_duration_s'], audio_gain=cfg['audio_volume'], initial_rest_s=cfg['initial_rest_s'],
                final_rest_s=cfg['final_rest_s'], deadzone=cfg['deadzone'],
                step_threshold=cfg['step_threshold'], tasks=tasks, audio=audio, forms=forms)

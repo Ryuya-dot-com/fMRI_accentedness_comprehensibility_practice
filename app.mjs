@@ -1,6 +1,13 @@
 import {formIndex, calibration, normalizedAxis, StepRating} from './core.mjs';
 
 const $ = id => document.getElementById(id);
+const requestedTask = new URLSearchParams(location.search).get('task');
+const taskTitle = requestedTask === 'accentedness' ? '外国語訛り' : requestedTask === 'comprehensibility' ? '理解しやすさ' : '';
+if (taskTitle) {
+  document.title = `${taskTitle}の練習`;
+  $('welcome-title').textContent = document.title;
+  $('welcome-title').hidden = false;
+}
 const panels = ['welcome', 'message', 'listening', 'fixation', 'rating'];
 const cells = [...document.querySelectorAll('#scale span')];
 let phase = 'welcome', data, blocks, blockIndex = 0, trialIndex = 0;
@@ -28,7 +35,7 @@ function stop(text) {
 $('restart').onclick = () => location.reload();
 
 async function loadAudio() {
-  const response = await fetch('./practice.json');
+  const response = await fetch('./practice.json', {cache:'no-cache'});
   if (!response.ok) throw new Error('練習の設定を読み込めませんでした。');
   data = await response.json();
   await Promise.all(data.audio.map(async item => {
@@ -44,6 +51,10 @@ async function loadAudio() {
 $('start-form').addEventListener('submit', async event => {
   event.preventDefault();
   if (phase !== 'welcome') return;
+  if (requestedTask !== null && !taskTitle) {
+    $('start-error').textContent = '練習のリンクが正しくありません。案内されたリンクから開き直してください。';
+    return;
+  }
   let index;
   try { index = formIndex($('participant').value.trim()); }
   catch (error) { $('start-error').textContent = error.message; return; }
@@ -66,7 +77,7 @@ $('start-form').addEventListener('submit', async event => {
     gain = context.createGain();
     gain.gain.value = data.audio_gain;
     gain.connect(context.destination);
-    blocks = data.forms[index];
+    blocks = data.forms[index].filter(block => requestedTask === null || block.task === requestedTask);
     $('participant').value = '';
     phase = 'connect';
     message('ジョイスティックの確認', 'スティックを中央に戻してください。\n人差し指のボタンを1回押して、離してください。');
@@ -85,7 +96,7 @@ function padState() {
 function instructions() {
   const block = blocks[blockIndex], task = data.tasks[block.task];
   phase = 'instructions';
-  message(`練習：${task.title}の評価（${blockIndex+1} / 2）`,
+  message(`練習：${task.title}の評価${blocks.length > 1 ? `（${blockIndex+1} / ${blocks.length}）` : ''}`,
     `${task.definition}\n\n音声が流れている間は操作せず、最後まで聞いてください。\n` +
     '音声の後は、評定画面が出るまでお待ちください。\n' +
     `評定画面が出てから${data.rating_s}秒以内に確定してください。\n` +
