@@ -1,44 +1,40 @@
 {
-  "recorded_at": "2026-11-13T08:41:50.905644+00:00",
+  "recorded_at": "2026-11-13T08:50:05.867689+00:00",
   "version": "joystick-practice-20261113",
   "instruction_version": "prerating_ja_v3",
-  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/1291e2ecf87342f9891602dcd273ed05e883dc44/verification.json",
+  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/d10ed24cda84acead68edb8d3f7fd58494532228/verification.json",
   "changes": [
-    "Removed the neutral-return/button-release sentence from Web and MRI joystick task instructions at the user's request.",
-    "Calibration prompts, input behavior, all ten sounds per task, endpoints and trial schedules are unchanged.",
-    "ID 99 / 099 is supported: direction X, counterbalance cell 3."
+    "Use the first two sounds of each task for oral instruction, then show the user-requested headset message after the second rating and ITI.",
+    "Wait without a time limit; a fresh index-finger press while centered resumes at sound three.",
+    "Retain all ten sounds exactly once per task, existing ID assignments and timing within each trial. MRI software and plans are unchanged."
   ],
   "source_sha256": {
-    "index.html": "431c616cee514445c811ed5140c31ecbc6e6522b5e9d5e1703dd9fee79bca815",
+    "index.html": "f87b144e5b83e7bf55e09e9a3bb8e3fb9ac5c483a7481ab685611d8fddc84c6a",
     "style.css": "11e6871d3e99f92544ea8063088e76b68ecca373406f8eb06713c3472bbf13be",
-    "app.mjs": "73d310e3f45a5c9d39a537066f71b8cbd92d2a4ecbfb82ebaaf1a3e069e102da",
+    "app.mjs": "6ddde5cbfe3a23de30bdb213422dcae3c16dd4a34b23ed3803ee9ebfeeae34bb",
     "core.mjs": "85e203c2dd67a3617308978c206607ae83235b478d6f7c699c0af08ab817ddcb",
     "practice.json": "8d8235f3dc19d689e6b5dd7b9eb2896c2e39c06b8f0cf84844d0ae4db43f5862"
   },
   "verification": {
-    "node_tests": 8,
+    "node_tests": 9,
     "node_test_failures": 0,
     "separate_task_sessions": 18,
     "separate_task_trials": 180,
-    "all_8_ID_assignments_both_tasks_complete_after_10_trials": true,
-    "combined_link_20_trials_both_confirm_buttons": true,
+    "all_8_ID_assignments_and_ID99_both_tasks": "Pause after sound two, remain paused for a simulated minute, resume at sound three, finish at ten.",
+    "combined_link_20_trials_both_confirm_buttons": "One headset pause per task; 20 presentations complete.",
+    "held_and_off_center_buttons": "Four scenarios: confirmation buttons 0/2 crossed with answered/unanswered second rating. Held/off-center presses do not resume; a fresh centered press does.",
+    "interruption_checks": "Disconnect, hidden page, focus loss and Escape tested during normal listening and the headset pause; missing audio also stops.",
     "all_10_wav_hashes_checked": true,
     "each_task_all_10_sounds_once_and_both_tasks_twice": true,
     "Japanese_first_and_no_3_consecutive_groups_all_blocks": true,
-    "MRI_source_comparison": "All 8 forms / 16 blocks: endpoints and original audio-specific delay/ITI match build_runs(practice); each task concatenates its original five trials and the other five.",
-    "invalid_task_links_rejected": true,
-    "interruption_and_missing_audio_tests": "passed",
-    "ID99_Web_both_tasks": "Both separate links finish after ten trials with X endpoints; included in the eight passing Node tests.",
-    "ID99_MRI": "99 and 099 generate identical six-run / 288-trial plans, X direction, cell 3, all runs within 540 seconds; no saved plans written.",
-    "MRI_instruction_expressions": "Both tasks, joystick 5/9 and buttons 4: actual wait_for_scanner text expressions compared before/after; only the requested joystick sentence is removed, button text is identical.",
-    "MRI_source_diff": "Exact source comparison: only INSTRUCTION_VERSION and the two instruction string lines changed. Syntax compiled successfully.",
-    "practice_json_diff": "Only instruction_version changed from v2 to v3; all forms, audio metadata and timings are byte-equivalent when that field is normalized."
+    "browser_smoke": "Chrome, actual WAV playback and real-time waits, simulated Trainer, ID 99 accentedness: two sounds/two ratings followed by the exact headset message; visual layout checked; simulated finger press resumed sound three. Manually aborted after later playback began; not a full ten-sound browser run.",
+    "unchanged_inputs": "core.mjs, style.css, practice.json and MRI accentedness.py hashes match the previous verification."
   },
   "evidence_reuse": {
-    "core_mjs_style_css_audio_and_trial_forms_unchanged": true,
-    "prior_browser_checks": "See previous_verification. No new browser render was required for deletion of one instruction line.",
-    "prior_16000_update_comparison": "See previous verification chain; selection and calibration logic unchanged.",
-    "MRI_full_run_tests_not_repeated": "Only instruction text/version changed, confirmed by exact source diff; rendered instruction expressions and ID99 plan generation checked separately."
+    "MRI_source_and_plans_unchanged": true,
+    "prior_MRI_instruction_and_ID99_plan_checks": "See previous_verification; MRI source hash unchanged.",
+    "prior_16000_update_comparison": "See previous verification chain; calibration and selection core unchanged.",
+    "practice_forms_and_timing_unchanged": true
   },
   "wording": {
     "source": "Pre-rating task.docx definitions, 2026-11-11 user endpoints, and 2026-11-13 instruction-line deletion.",
@@ -58,7 +54,7 @@
   },
   "not_verified": [
     "physical Trainer and browser mapping on laboratory PC",
-    "full ten-trial real-time browser session for the new separate-link flow",
+    "full ten-trial real-time browser completion with the headset pause",
     "other browsers and operating systems",
     "physical audio onset, sound pressure, MRI pulses or synchronization"
   ],
@@ -66,6 +62,6 @@
     "repository": "Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice",
     "url": "https://ryuya-dot-com.github.io/fMRI_accentedness_comprehensibility_practice/",
     "verification_stage": "Prepublication checks passed. Deployment evidence is recorded locally after publication.",
-    "public_verification_record": "tests/artifacts/wording-v3-public-verification.json"
+    "public_verification_record": "tests/artifacts/headset-public-verification.json"
   }
 }

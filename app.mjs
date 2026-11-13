@@ -198,6 +198,7 @@ function frame(now) {
       } else if (phase === 'instructions' && rising && Math.abs(normalizedAxis(pad.axes[cal.axis], cal)) <= data.deadzone) {
         fixation('initial', data.initial_rest_s, now);
       } else if (phase === 'initial' && now >= deadline) listen();
+      else if (phase === 'headset' && rising && Math.abs(normalizedAxis(pad.axes[cal.axis], cal)) <= data.deadzone) listen();
       else if (phase === 'delay' && now >= deadline) beginRating(now);
       else if (phase === 'rating') {
         if (now >= deadline) {
@@ -210,7 +211,11 @@ function frame(now) {
         }
       } else if (phase === 'iti' && now >= deadline) {
         trialIndex++;
-        if (trialIndex < blocks[blockIndex].trials.length) listen();
+        if (trialIndex === 2) {
+          phase = 'headset';
+          message('', 'ここからはヘッドセットをして練習に取り組んでください',
+            '準備ができたら、人差し指のボタンを押してください。');
+        } else if (trialIndex < blocks[blockIndex].trials.length) listen();
         else fixation('final', data.final_rest_s, now);
       } else if (phase === 'final' && now >= deadline) {
         blockIndex++;

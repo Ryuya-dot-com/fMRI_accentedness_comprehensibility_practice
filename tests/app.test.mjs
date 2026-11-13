@@ -71,6 +71,7 @@ test('combined link: calibration and 20 trials; same finger regardless of button
       h.advance();assert.equal(h.get('phase'),'iti');assert.equal(h.get('rating'),null);
       if(i===2)assert.match(h.el('feedback').textContent,/確定できません/);
       h.pad.axes[0]=-.03;h.advance();
+      if(i%10===1){assert.equal(h.get('phase'),'headset');h.press();}
       if(i===9){h.advance();assert.equal(h.get('phase'),'instructions');h.press();h.advance();}
     }
     h.advance();assert.equal(h.get('phase'),'finish');assert.equal(h.get('buffers.size'),0);
@@ -93,17 +94,47 @@ test('separate links finish after ten sounds of only the selected task for all e
     h.press();h.advance();
     for (let trial=0;trial<10;trial++) {
       assert.equal(h.get('phase'),'listening');assert.equal(h.plays,trial+1);
+      assert.equal(h.get('trialIndex'),trial,'resume must continue with the third sound, not repeat the first two');
       h.endAudio();if(h.get('phase')==='delay')h.advance();
       assert.equal(h.get('phase'),'rating');
       assert.equal(h.el('task-title').textContent,title);
       assert.equal(h.el('left-label').textContent,left);
       h.press();assert.equal(h.get('rating.confirmed'),true);
       h.advance();h.advance();
+      if(trial===1) {
+        assert.equal(h.get('phase'),'headset');
+        assert.equal(h.el('message-body').textContent,'ここからはヘッドセットをして練習に取り組んでください');
+        h.frame(60000);assert.equal(h.get('phase'),'headset');assert.equal(h.plays,2);
+        h.press();assert.equal(h.get('phase'),'listening');
+      }
     }
     assert.equal(h.get('phase'),'final');h.advance();
     assert.equal(h.get('phase'),'finish');assert.equal(h.plays,10);
     assert.equal(h.get('buffers.size'),0);assert.equal(h.el('participant').value,'');
     assert.equal(h.requests.length,11);
+  }
+});
+test('headset pause rejects held or off-center presses and follows unanswered as well as confirmed ratings',async()=>{
+  for (const button of [0,2]) for (const confirm of [false,true]) {
+    const h=await harness({button,search:'?task=accentedness'});
+    h.calibrate();h.press();h.advance();
+    for (let trial=0;trial<2;trial++) {
+      h.endAudio();if(h.get('phase')==='delay')h.advance();
+      if(trial===0)h.press();
+      else if(confirm){h.pad.buttons[button].pressed=true;h.frame();}
+      h.advance();
+      if(trial===1) {
+        if(!confirm)assert.match(h.el('feedback').textContent,/確定できません/);
+        h.pad.buttons[button].pressed=true;h.frame();
+      }
+      h.advance();
+    }
+    assert.equal(h.get('phase'),'headset');
+    h.frame(60000);assert.equal(h.plays,2);assert.equal(h.get('phase'),'headset');
+    h.pad.buttons[button].pressed=false;h.pad.axes[0]=-.7;h.frame();
+    h.press();assert.equal(h.get('phase'),'headset','off-center press cannot start playback');
+    h.pad.axes[0]=-.03;h.frame();h.press();
+    assert.equal(h.get('phase'),'listening');assert.equal(h.plays,3);
   }
 });
 test('an invalid task link does not silently start a different task',async()=>{
@@ -113,12 +144,20 @@ test('an invalid task link does not silently start a different task',async()=>{
     assert.match(h.el('start-error').textContent,/リンクが正しくありません/);
   }
 });
-test('disconnect, loss of focus, hidden page and missing audio stop instead of silently continuing',async()=>{
-  for(const kind of ['disconnect','blur','hidden']) {
+test('disconnect, focus/visibility loss, Escape and missing audio stop, including during the headset pause',async()=>{
+  for(const atHeadset of [false,true]) for(const kind of ['disconnect','blur','hidden','escape']) {
     const h=await harness();h.calibrate();h.press();h.advance();
+    if(atHeadset) {
+      for(let trial=0;trial<2;trial++) {
+        h.endAudio();if(h.get('phase')==='delay')h.advance();
+        h.press();h.advance();h.advance();
+      }
+      assert.equal(h.get('phase'),'headset');
+    }
     if(kind==='disconnect'){h.pad.connected=false;h.frame();}
     if(kind==='blur')h.window.listeners.blur();
     if(kind==='hidden'){h.document.hidden=true;h.document.listeners.visibilitychange();}
+    if(kind==='escape')h.window.listeners.keydown({key:'Escape'});
     assert.equal(h.get('phase'),'error');assert.equal(h.el('restart').hidden,false);
   }
   const missing=await harness({missingAudio:true});assert.equal(missing.get('phase'),'error');
