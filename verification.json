@@ -1,26 +1,25 @@
 {
-  "recorded_at": "2026-11-13T08:31:49.955231+00:00",
+  "recorded_at": "2026-11-13T08:41:50.905644+00:00",
   "version": "joystick-practice-20261113",
-  "instruction_version": "prerating_ja_v2",
-  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/a2168b909a1c7fb6cf55696000f2cde84866e46f/verification.json",
+  "instruction_version": "prerating_ja_v3",
+  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/1291e2ecf87342f9891602dcd273ed05e883dc44/verification.json",
   "changes": [
-    "Separate task links select only accentedness or comprehensibility.",
-    "Each task uses all 10 approved practice sounds once; completing both tasks gives two presentations of each sound.",
-    "The combined URL runs 10 sounds per task in the ID-assigned task order.",
-    "MRI scale directions are preserved; both practice pools now appear in each Web task. MRI presentation code and plans are unchanged."
+    "Removed the neutral-return/button-release sentence from Web and MRI joystick task instructions at the user's request.",
+    "Calibration prompts, input behavior, all ten sounds per task, endpoints and trial schedules are unchanged.",
+    "ID 99 / 099 is supported: direction X, counterbalance cell 3."
   ],
   "source_sha256": {
-    "index.html": "5d6b8aa06862614ee2182eb7d8e4cb71361b85ff5b121826e25ebdac364bf827",
+    "index.html": "431c616cee514445c811ed5140c31ecbc6e6522b5e9d5e1703dd9fee79bca815",
     "style.css": "11e6871d3e99f92544ea8063088e76b68ecca373406f8eb06713c3472bbf13be",
-    "app.mjs": "571c0d5b755fc13edb767c7e7bfbdc01aa6742b5e3927fc39b43aa68b8847150",
+    "app.mjs": "73d310e3f45a5c9d39a537066f71b8cbd92d2a4ecbfb82ebaaf1a3e069e102da",
     "core.mjs": "85e203c2dd67a3617308978c206607ae83235b478d6f7c699c0af08ab817ddcb",
-    "practice.json": "643334c7764e214a84b64181d949fe9421430e65a775bb1430bf532acf2aaa01"
+    "practice.json": "8d8235f3dc19d689e6b5dd7b9eb2896c2e39c06b8f0cf84844d0ae4db43f5862"
   },
   "verification": {
     "node_tests": 8,
     "node_test_failures": 0,
-    "separate_task_sessions": 16,
-    "separate_task_trials": 160,
+    "separate_task_sessions": 18,
+    "separate_task_trials": 180,
     "all_8_ID_assignments_both_tasks_complete_after_10_trials": true,
     "combined_link_20_trials_both_confirm_buttons": true,
     "all_10_wav_hashes_checked": true,
@@ -29,15 +28,20 @@
     "MRI_source_comparison": "All 8 forms / 16 blocks: endpoints and original audio-specific delay/ITI match build_runs(practice); each task concatenates its original five trials and the other five.",
     "invalid_task_links_rejected": true,
     "interruption_and_missing_audio_tests": "passed",
-    "chrome_UI_smoke": "Both separate-link start titles and ID fields verified. Accentedness ID 005 reached the correct task instructions and Y endpoints with simulated calibration. Browser smoke is not a full 10-trial real-time run; full completion was tested with simulated clocks in Node."
+    "ID99_Web_both_tasks": "Both separate links finish after ten trials with X endpoints; included in the eight passing Node tests.",
+    "ID99_MRI": "99 and 099 generate identical six-run / 288-trial plans, X direction, cell 3, all runs within 540 seconds; no saved plans written.",
+    "MRI_instruction_expressions": "Both tasks, joystick 5/9 and buttons 4: actual wait_for_scanner text expressions compared before/after; only the requested joystick sentence is removed, button text is identical.",
+    "MRI_source_diff": "Exact source comparison: only INSTRUCTION_VERSION and the two instruction string lines changed. Syntax compiled successfully.",
+    "practice_json_diff": "Only instruction_version changed from v2 to v3; all forms, audio metadata and timings are byte-equivalent when that field is normalized."
   },
   "evidence_reuse": {
-    "core_mjs_style_css_and_audio_unchanged": true,
-    "prior_16000_update_comparison": "See previous_verification and its predecessor; selection and calibration logic are unchanged.",
-    "MRI_tests_not_rerun": "MRI code/config/plans unchanged; checked all eight Web form endpoint mappings directly against the existing MRI builder."
+    "core_mjs_style_css_audio_and_trial_forms_unchanged": true,
+    "prior_browser_checks": "See previous_verification. No new browser render was required for deletion of one instruction line.",
+    "prior_16000_update_comparison": "See previous verification chain; selection and calibration logic unchanged.",
+    "MRI_full_run_tests_not_repeated": "Only instruction text/version changed, confirmed by exact source diff; rendered instruction expressions and ID99 plan generation checked separately."
   },
   "wording": {
-    "source": "Pre-rating task.docx definitions plus explicit user endpoint change, 2026-11-11",
+    "source": "Pre-rating task.docx definitions, 2026-11-11 user endpoints, and 2026-11-13 instruction-line deletion.",
     "anchors": [
       [
         "理解しにくい",
@@ -48,8 +52,9 @@
         "訛りがない"
       ]
     ],
-    "mri_source_sha256": "9bf1965271e21a5cedbf92f93f04d57fc173fe84904bdaaab56894b57383153b",
-    "new_plan_folder": "participant_plans_prerating_jitter_v1_ja_instructions_v2"
+    "mri_source_sha256": "f96b13cc594d34ab59acaa3ed05d60aee0641bb91e66ce38fc614079860e34e6",
+    "new_plan_folder": "participant_plans_prerating_jitter_v1_ja_instructions_v2",
+    "plan_folder_unchanged": true
   },
   "not_verified": [
     "physical Trainer and browser mapping on laboratory PC",
@@ -61,6 +66,6 @@
     "repository": "Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice",
     "url": "https://ryuya-dot-com.github.io/fMRI_accentedness_comprehensibility_practice/",
     "verification_stage": "Prepublication checks passed. Deployment evidence is recorded locally after publication.",
-    "public_verification_record": "tests/artifacts/separate-links-public-verification.json"
+    "public_verification_record": "tests/artifacts/wording-v3-public-verification.json"
   }
 }

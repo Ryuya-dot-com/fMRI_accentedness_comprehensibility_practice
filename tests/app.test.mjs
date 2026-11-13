@@ -77,8 +77,8 @@ test('combined link: calibration and 20 trials; same finger regardless of button
     assert.equal(h.requests.length,11);assert.equal(h.el('participant').value,'');
   }
 });
-test('separate links finish after ten sounds of only the selected task for all eight ID assignments',async()=>{
-  for (let id=1;id<=8;id++) for (const task of ['accentedness','comprehensibility']) {
+test('separate links finish after ten sounds of only the selected task for all eight ID assignments and ID 99',async()=>{
+  for (const id of [1,2,3,4,5,6,7,8,99]) for (const task of ['accentedness','comprehensibility']) {
     const h=await harness({id:String(id).padStart(3,'0'),search:`?task=${task}`});
     const title=task==='accentedness'?'外国語訛り':'理解しやすさ';
     assert.equal(h.document.title,`${title}の練習`);
@@ -86,7 +86,8 @@ test('separate links finish after ten sounds of only the selected task for all e
     assert.equal(h.get('blocks.length'),1);
     assert.equal(h.get('blocks[0].task'),task);
     assert.equal(h.get('new Set(blocks[0].trials.map(t=>t.file)).size'),10);
-    const left=task==='accentedness'?(id<=4?'訛りが強い':'訛りがない'):(id<=4?'理解しにくい':'理解しやすい');
+    const isX=id<=4 || id===99;
+    const left=task==='accentedness'?(isX?'訛りが強い':'訛りがない'):(isX?'理解しにくい':'理解しやすい');
     assert.equal(h.get('blocks[0].left'),left);
     h.calibrate();assert.equal(h.el('message-title').textContent,`練習：${title}の評価`);
     h.press();h.advance();
