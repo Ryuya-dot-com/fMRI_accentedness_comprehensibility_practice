@@ -11,7 +11,7 @@
     "MRI audio check repeats the same normalized Japanese Speaker 5 recording as Web practice_06.wav."
   ],
   "source_sha256": {
-    "index.html": "a9e745c952eae4fdd3877a81b18a44fa5200d3824224437309f047c16b48a414",
+    "index.html": "ac1faebc9a2b8c5693437ac673d88a7bd40ac85a432c820910a765cea043bd5d",
     "style.css": "775c65e10dc06b6106917577a27e17c600a1701e9b0209fc556ef608380c50e5",
     "app.mjs": "97f76737fe33a1a6a22d7322d20b9db108d9e3524e16089eac78d9dadc21b1fb",
     "core.mjs": "85e203c2dd67a3617308978c206607ae83235b478d6f7c699c0af08ab817ddcb",
@@ -70,7 +70,8 @@
     "MRI_layout": "Actual PsychoPy instruction expressions rendered at 1280x800; both texts fit and images inspected.",
     "materials": "Ten approved Web WAV hashes unchanged, no main recording/sentence overlap; Speaker5 Japanese WAV and playback gain exactly match MRI volume check.",
     "source_loudness_lufs": -30.03,
-    "loudness_evidence": "Reused saved prepared_audio_measurements.csv and normalization provenance for byte-identical WAV; normalization not rerun."
+    "loudness_evidence": "Reused saved prepared_audio_measurements.csv and normalization provenance for byte-identical WAV; normalization not rerun.",
+    "stylesheet_cache": "HTML versions the final stylesheet URL; no application or trial changes."
   },
   "evidence_reuse": {
     "main_stimuli_config_timing_and_frozen_plans_unchanged": true,
