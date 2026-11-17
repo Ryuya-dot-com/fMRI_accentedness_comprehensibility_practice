@@ -39,7 +39,7 @@ test('physical left is screen left, either axis sign; calibration rejects incomp
     assert.throws(() => calibration(...args));
   }
 });
-test('each task contains all ten intact sounds once with the MRI direction and no three consecutive groups', () => {
+test('pre-rated 2+5 task forms preserve approved WAVs and all eight MRI scale directions', () => {
   const d = JSON.parse(readFileSync(new URL('../practice.json', import.meta.url)));
   assert.equal(d.audio.length,10); assert.equal(d.forms.length,8);
   for (const item of d.audio) {
@@ -51,20 +51,15 @@ test('each task contains all ten intact sounds once with the MRI direction and n
     assert.equal(blocks[0].task,i%2 === 0 ? 'comprehensibility':'accentedness');
     const comp = blocks.find(b=>b.task==='comprehensibility');
     assert.equal(comp.pool,'P1+P2');
-    assert.ok(comp.trials.slice(0,5).every(t => d.audio.find(a=>a.file===t.file).pool === (Math.floor(i/2)%2 === 0 ? 'P1':'P2')));
     assert.equal(comp.left,i<4 ? '理解しにくい':'理解しやすい');
     const accent = blocks.find(b=>b.task==='accentedness');
     assert.equal(accent.left,i<4 ? '訛りが強い':'訛りがない');
     assert.equal(accent.right,i<4 ? '訛りがない':'訛りが強い');
-    const files = blocks.flatMap(b=>b.trials.map(t=>t.file));
-    assert.equal(files.length,20); assert.equal(new Set(files).size,10);
-    for (const file of new Set(files)) assert.equal(files.filter(f=>f===file).length,2);
     for (const b of blocks) {
-      assert.equal(b.trials.length,10);
-      assert.equal(new Set(b.trials.map(t=>t.file)).size,10);
-      assert.equal(d.audio.find(a=>a.file===b.trials[0].file).group,'japanese');
-      const groups = b.trials.map(t=>d.audio.find(a=>a.file===t.file).group);
-      for (let j=2;j<groups.length;j++) assert.ok(groups[j] !== groups[j-1] || groups[j] !== groups[j-2]);
+      const numbers = b.trials.map(t=>d.audio.find(a=>a.file===t.file).speaker_number);
+      assert.deepEqual(numbers,b.task==='comprehensibility' ? [1,5,6,1,3,5,4] : [1,5,2,5,10,1,6]);
+      assert.deepEqual(b.trials.map(t=>t.role),['explanation','explanation',...Array(5).fill('practice')]);
+      assert.equal(new Set(b.trials.slice(2).map(t=>t.file)).size,5);
       b.trials.forEach(t=>{ assert.ok(t.delay_s>=0 && t.delay_s<=2.5); assert.ok(t.iti_s>=2 && t.iti_s<=6); });
     }
   }

@@ -1,67 +1,98 @@
 {
-  "recorded_at": "2026-11-13T08:50:05.867689+00:00",
-  "version": "joystick-practice-20261113",
-  "instruction_version": "prerating_ja_v3",
-  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/d10ed24cda84acead68edb8d3f7fd58494532228/verification.json",
+  "recorded_at": "2026-11-17T07:26:13.858347+00:00",
+  "version": "joystick-practice-20261117",
+  "instruction_version": "prerating_ja_v4",
+  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/331efbf4525a9449646e0d615de007b27bd55018/verification.json",
   "changes": [
-    "Use the first two sounds of each task for oral instruction, then show the user-requested headset message after the second rating and ITI.",
-    "Wait without a time limit; a fresh index-finger press while centered resumes at sound three.",
-    "Retain all ten sounds exactly once per task, existing ID assignments and timing within each trial. MRI software and plans are unchanged."
+    "One task per session; root URL offers task links.",
+    "2 guided plus 5 solo presentations: three middle recordings plus two reused endpoint recordings.",
+    "Explain return to neutral between steps and direct midpoint confirmation.",
+    "Remove grammar/vocabulary sentence from Web and MRI definitions.",
+    "MRI audio check repeats the same normalized Japanese Speaker 5 recording as Web practice_06.wav."
   ],
   "source_sha256": {
-    "index.html": "f87b144e5b83e7bf55e09e9a3bb8e3fb9ac5c483a7481ab685611d8fddc84c6a",
-    "style.css": "11e6871d3e99f92544ea8063088e76b68ecca373406f8eb06713c3472bbf13be",
-    "app.mjs": "6ddde5cbfe3a23de30bdb213422dcae3c16dd4a34b23ed3803ee9ebfeeae34bb",
+    "index.html": "a9e745c952eae4fdd3877a81b18a44fa5200d3824224437309f047c16b48a414",
+    "style.css": "775c65e10dc06b6106917577a27e17c600a1701e9b0209fc556ef608380c50e5",
+    "app.mjs": "97f76737fe33a1a6a22d7322d20b9db108d9e3524e16089eac78d9dadc21b1fb",
     "core.mjs": "85e203c2dd67a3617308978c206607ae83235b478d6f7c699c0af08ab817ddcb",
-    "practice.json": "8d8235f3dc19d689e6b5dd7b9eb2896c2e39c06b8f0cf84844d0ae4db43f5862"
+    "practice.json": "8a8c19c9dc50e149f7349311941b7322ff42e47049b26e84776f926283f71381"
   },
   "verification": {
-    "node_tests": 9,
+    "node_tests": 10,
     "node_test_failures": 0,
     "separate_task_sessions": 18,
-    "separate_task_trials": 180,
-    "all_8_ID_assignments_and_ID99_both_tasks": "Pause after sound two, remain paused for a simulated minute, resume at sound three, finish at ten.",
-    "combined_link_20_trials_both_confirm_buttons": "One headset pause per task; 20 presentations complete.",
-    "held_and_off_center_buttons": "Four scenarios: confirmation buttons 0/2 crossed with answered/unanswered second rating. Held/off-center presses do not resume; a fresh centered press does.",
-    "interruption_checks": "Disconnect, hidden page, focus loss and Escape tested during normal listening and the headset pause; missing audio also stops.",
-    "all_10_wav_hashes_checked": true,
-    "each_task_all_10_sounds_once_and_both_tasks_twice": true,
-    "Japanese_first_and_no_3_consecutive_groups_all_blocks": true,
-    "browser_smoke": "Chrome, actual WAV playback and real-time waits, simulated Trainer, ID 99 accentedness: two sounds/two ratings followed by the exact headset message; visual layout checked; simulated finger press resumed sound three. Manually aborted after later playback began; not a full ten-sound browser run.",
-    "unchanged_inputs": "core.mjs, style.css, practice.json and MRI accentedness.py hashes match the previous verification."
+    "separate_task_trials": 126,
+    "simulated_cases": "All 8 cells and ID99, both tasks; neutral 3, held/off-center/late inputs, timeouts, pause and interruption checks.",
+    "python_js_comparison": "200 traces / 16000 updates; Rating and StepRating source unchanged.",
+    "MRI_tests": [
+      "test_confirmation.py",
+      "test_instruction_wording.py",
+      "test_practice_materials.py",
+      "test_experiment.py"
+    ],
+    "MRI_test_failures": 0,
+    "MRI_frozen_schedules": "All 8 cells compared to historical schedules in instruction regression; IDs1/5/99 compared exactly before/after; existing saved-plan/config/stimulus hashes unchanged.",
+    "browser": "Chrome headless, actual WAV decoding/playback and real-time timing, muted audio, simulated Trainer, ID99; both tasks finish all seven presentations with expected confirmed values and one headset pause.",
+    "browser_counts": [
+      {
+        "task": "comprehensibility",
+        "plays": 7,
+        "ratings": 7,
+        "confirmed": 7,
+        "headsetPauses": 1
+      },
+      {
+        "task": "accentedness",
+        "plays": 7,
+        "ratings": 7,
+        "confirmed": 7,
+        "headsetPauses": 1
+      }
+    ],
+    "final_layout": [
+      {
+        "task": "comprehensibility",
+        "height": 800,
+        "scrollHeight": 800,
+        "font": "24px",
+        "width": 1280,
+        "scrollWidth": 1280
+      },
+      {
+        "task": "accentedness",
+        "height": 800,
+        "scrollHeight": 800,
+        "font": "24px",
+        "width": 1280,
+        "scrollWidth": 1280
+      }
+    ],
+    "MRI_layout": "Actual PsychoPy instruction expressions rendered at 1280x800; both texts fit and images inspected.",
+    "materials": "Ten approved Web WAV hashes unchanged, no main recording/sentence overlap; Speaker5 Japanese WAV and playback gain exactly match MRI volume check.",
+    "source_loudness_lufs": -30.03,
+    "loudness_evidence": "Reused saved prepared_audio_measurements.csv and normalization provenance for byte-identical WAV; normalization not rerun."
   },
   "evidence_reuse": {
-    "MRI_source_and_plans_unchanged": true,
-    "prior_MRI_instruction_and_ID99_plan_checks": "See previous_verification; MRI source hash unchanged.",
-    "prior_16000_update_comparison": "See previous verification chain; calibration and selection core unchanged.",
-    "practice_forms_and_timing_unchanged": true
+    "main_stimuli_config_timing_and_frozen_plans_unchanged": true,
+    "MRI_selection_code_unchanged": true,
+    "long_MRI_run_not_repeated": "No main timing/input changes; prior evidence retained, relevant input/save/abort/audio-check regressions passed."
   },
   "wording": {
-    "source": "Pre-rating task.docx definitions, 2026-11-11 user endpoints, and 2026-11-13 instruction-line deletion.",
-    "anchors": [
-      [
-        "理解しにくい",
-        "理解しやすい"
-      ],
-      [
-        "訛りが強い",
-        "訛りがない"
-      ]
-    ],
-    "mri_source_sha256": "f96b13cc594d34ab59acaa3ed05d60aee0641bb91e66ce38fc614079860e34e6",
+    "mri_source_sha256": "e6db36735e5c71750a3714e322a0e7864478ee6f81e50f76b3b3dca3f1cfb537",
     "new_plan_folder": "participant_plans_prerating_jitter_v1_ja_instructions_v2",
     "plan_folder_unchanged": true
   },
   "not_verified": [
-    "physical Trainer and browser mapping on laboratory PC",
-    "full ten-trial real-time browser completion with the headset pause",
-    "other browsers and operating systems",
-    "physical audio onset, sound pressure, MRI pulses or synchronization"
+    "physical Trainer/browser mapping on laboratory PC",
+    "physical MRI/932 input and acquisition synchronization",
+    "ear-level sound pressure and physical audio onset",
+    "full six-run physical scan session",
+    "participant burden, questionnaires and swap/continuous-session timetable"
   ],
   "publication": {
     "repository": "Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice",
     "url": "https://ryuya-dot-com.github.io/fMRI_accentedness_comprehensibility_practice/",
-    "verification_stage": "Prepublication checks passed. Deployment evidence is recorded locally after publication.",
-    "public_verification_record": "tests/artifacts/headset-public-verification.json"
+    "verification_stage": "Local checks passed; deployment evidence is recorded separately after publication.",
+    "public_verification_record": "tests/artifacts/prerating-v4-public-verification.json"
   }
 }

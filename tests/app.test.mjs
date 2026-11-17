@@ -7,7 +7,7 @@ import * as core from '../core.mjs';
 
 const code = readFileSync(new URL('../app.mjs',import.meta.url),'utf8').replace(/^import .*;\n/,'');
 const tick = async () => { for(let i=0;i<5;i++) await new Promise(setImmediate); };
-async function harness({id='005',missingAudio=false,button=0,search=''}={}) {
+async function harness({id='005',missingAudio=false,button=0,search='?task=comprehensibility'}={}) {
   const ids = [...readFileSync(new URL('../index.html',import.meta.url),'utf8').matchAll(/id="([^"]+)"/g)].map(m=>m[1]);
   const elements = new Map();
   class Element {
@@ -48,14 +48,16 @@ async function harness({id='005',missingAudio=false,button=0,search=''}={}) {
     calibrate:()=>{press();frame(510);pad.axes[0]=.66;press();pad.axes[0]=-.03;frame();pad.axes[0]=-.7;press();pad.axes[0]=-.03;frame();},
   };
 }
-test('combined link: calibration and 20 trials; same finger regardless of button index; no early, held or late answers',async()=>{
+test('one task: calibration and seven trials; same finger regardless of button index; no early, held or late answers',async()=>{
   for(const button of [0,2]) {
     const h=await harness({button});
     h.calibrate();assert.equal(h.get('phase'),'instructions');
-    assert.match(h.el('message-body').textContent,/文法や語彙|実際に内容/);
+    assert.match(h.el('message-body').textContent,/実際に内容/);
+    assert.match(h.el('message-body').textContent,/一度中央に戻して/);
+    assert.match(h.el('message-body').textContent,/動かさずボタンで確定/);
     assert.equal(h.get('blocks[0].left'),'理解しやすい');
     h.press();h.advance();
-    for(let i=0;i<20;i++) {
+    for(let i=0;i<7;i++) {
       assert.equal(h.get('phase'),'listening');assert.equal(h.plays,i+1);
       h.pad.axes[0]=-.7;h.pad.buttons[button].pressed=true;h.frame();h.endAudio();
       if(h.get('phase')==='delay')h.advance();
@@ -71,14 +73,13 @@ test('combined link: calibration and 20 trials; same finger regardless of button
       h.advance();assert.equal(h.get('phase'),'iti');assert.equal(h.get('rating'),null);
       if(i===2)assert.match(h.el('feedback').textContent,/確定できません/);
       h.pad.axes[0]=-.03;h.advance();
-      if(i%10===1){assert.equal(h.get('phase'),'headset');h.press();}
-      if(i===9){h.advance();assert.equal(h.get('phase'),'instructions');h.press();h.advance();}
+      if(i===1){assert.equal(h.get('phase'),'headset');h.press();}
     }
     h.advance();assert.equal(h.get('phase'),'finish');assert.equal(h.get('buffers.size'),0);
     assert.equal(h.requests.length,11);assert.equal(h.el('participant').value,'');
   }
 });
-test('separate links finish after ten sounds of only the selected task for all eight ID assignments and ID 99',async()=>{
+test('separate links finish after 2+5 trials for all eight ID assignments and ID 99; neutral presses answer 3',async()=>{
   for (const id of [1,2,3,4,5,6,7,8,99]) for (const task of ['accentedness','comprehensibility']) {
     const h=await harness({id:String(id).padStart(3,'0'),search:`?task=${task}`});
     const title=task==='accentedness'?'外国語訛り':'理解しやすさ';
@@ -86,13 +87,14 @@ test('separate links finish after ten sounds of only the selected task for all e
     assert.equal(h.el('welcome-title').textContent,`${title}の練習`);
     assert.equal(h.get('blocks.length'),1);
     assert.equal(h.get('blocks[0].task'),task);
-    assert.equal(h.get('new Set(blocks[0].trials.map(t=>t.file)).size'),10);
+    assert.equal(h.get('new Set(blocks[0].trials.map(t=>t.file)).size'),5);
     const isX=id<=4 || id===99;
     const left=task==='accentedness'?(isX?'訛りが強い':'訛りがない'):(isX?'理解しにくい':'理解しやすい');
     assert.equal(h.get('blocks[0].left'),left);
     h.calibrate();assert.equal(h.el('message-title').textContent,`練習：${title}の評価`);
+    assert.doesNotMatch(h.el('message-body').textContent,/文法|語彙/);
     h.press();h.advance();
-    for (let trial=0;trial<10;trial++) {
+    for (let trial=0;trial<7;trial++) {
       assert.equal(h.get('phase'),'listening');assert.equal(h.plays,trial+1);
       assert.equal(h.get('trialIndex'),trial,'resume must continue with the third sound, not repeat the first two');
       h.endAudio();if(h.get('phase')==='delay')h.advance();
@@ -100,6 +102,7 @@ test('separate links finish after ten sounds of only the selected task for all e
       assert.equal(h.el('task-title').textContent,title);
       assert.equal(h.el('left-label').textContent,left);
       h.press();assert.equal(h.get('rating.confirmed'),true);
+      assert.equal(h.get('rating.value'),3);
       h.advance();h.advance();
       if(trial===1) {
         assert.equal(h.get('phase'),'headset');
@@ -109,10 +112,17 @@ test('separate links finish after ten sounds of only the selected task for all e
       }
     }
     assert.equal(h.get('phase'),'final');h.advance();
-    assert.equal(h.get('phase'),'finish');assert.equal(h.plays,10);
+    assert.equal(h.get('phase'),'finish');assert.equal(h.plays,7);
     assert.equal(h.get('buffers.size'),0);assert.equal(h.el('participant').value,'');
     assert.equal(h.requests.length,11);
   }
+});
+test('root URL offers separate sessions instead of starting both tasks',async()=>{
+  const h=await harness({search:''});
+  assert.equal(h.el('start-form').hidden,true);
+  assert.equal(h.el('task-links').hidden,false);
+  assert.equal(h.get('phase'),'welcome');
+  assert.equal(h.requests.length,0);
 });
 test('headset pause rejects held or off-center presses and follows unanswered as well as confirmed ratings',async()=>{
   for (const button of [0,2]) for (const confirm of [false,true]) {

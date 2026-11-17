@@ -6,7 +6,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 32px 20p
 section { width: min(1080px, 100%); text-align: center; }
 h1 { margin: 0 0 32px; font-size: clamp(25px, 3.2vw, 38px); font-weight: 500; }
 p { line-height: 1.65; }
-.copy { white-space: pre-line; font-size: clamp(18px, 2.2vw, 26px); }
+.copy { white-space: pre-line; font-size: clamp(18px, 2vw, 24px); line-height: 1.45; }
 .action, .hint { font-size: clamp(17px, 2vw, 23px); margin-top: 28px; }
 form { width: min(340px, 100%); margin: auto; text-align: left; }
 label { display: block; font-size: 24px; margin-bottom: 14px; }
@@ -15,6 +15,8 @@ input { width: 100%; background: #111; color: #fff; padding: 12px; }
 button { padding: 12px 28px; background: #eee; color: #111; cursor: pointer; min-height: 48px; }
 button:disabled { opacity: .5; cursor: wait; }
 button:focus-visible, input:focus-visible { outline: 3px solid #8ebeff; outline-offset: 5px; }
+a { color: #b7d5ff; font-size: 24px; }
+a:focus-visible { outline: 3px solid #8ebeff; outline-offset: 5px; }
 #start-error { color: #ffc3ba; font-size: 18px; }
 .speaker { width: clamp(120px, 20vw, 240px); }
 .cross { font-size: 64px; }

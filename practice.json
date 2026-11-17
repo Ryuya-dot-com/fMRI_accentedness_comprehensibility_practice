@@ -1,6 +1,6 @@
 {
-  "version": "joystick-practice-20261113",
-  "instruction_version": "prerating_ja_v3",
+  "version": "joystick-practice-20261117",
+  "instruction_version": "prerating_ja_v4",
   "scale_max": 5,
   "rating_s": 3.0,
   "audio_gain": 0.3,
@@ -15,7 +15,7 @@
     },
     "accentedness": {
       "title": "外国語訛り",
-      "definition": "「外国語訛り」は、「発話がどの程度、\n日本語母語話者の発話（発音）に近いか」を指します。\nここでは、発音的特徴が日本語母語話者の発話のようであるかを指し、\n文法や語彙の特徴は含みません。\nまた、「理解しやすさ」と「外国語訛り」は違う評価項目のため、\n必ずしも同じような評価になるとは限りません。"
+      "definition": "「外国語訛り」は、「発話がどの程度、\n日本語母語話者の発話（発音）に近いか」を指します。\nここでは、発音的特徴が日本語母語話者の発話のようであるかを\n評価してください。\nまた、「理解しやすさ」と「外国語訛り」は違う評価項目のため、\n必ずしも同じような評価になるとは限りません。"
     }
   },
   "audio": [
@@ -25,7 +25,11 @@
       "duration_s": 4.78275,
       "sentence_id": "S020",
       "pool": "P1",
-      "group": "practice_non_native"
+      "group": "practice_non_native",
+      "speaker_number": 1,
+      "source_recording": "KYO_F03_Greek_B2_020.wav",
+      "prerating_comp": 14.29,
+      "prerating_accent": 22.08
     },
     {
       "file": "audio/practice_02.wav",
@@ -33,7 +37,11 @@
       "duration_s": 5.9664375,
       "sentence_id": "S045",
       "pool": "P2",
-      "group": "practice_non_native"
+      "group": "practice_non_native",
+      "speaker_number": 10,
+      "source_recording": "KYO_F03_Russian_B1_045.wav",
+      "prerating_comp": 59.5,
+      "prerating_accent": 31.92
     },
     {
       "file": "audio/practice_03.wav",
@@ -41,7 +49,11 @@
       "duration_s": 3.119125,
       "sentence_id": "S014",
       "pool": "P2",
-      "group": "japanese"
+      "group": "japanese",
+      "speaker_number": 3,
+      "source_recording": "KYO_M04_JP_B2_014.wav",
+      "prerating_comp": 74.71,
+      "prerating_accent": 83.92
     },
     {
       "file": "audio/practice_04.wav",
@@ -49,7 +61,11 @@
       "duration_s": 5.799875,
       "sentence_id": "S015",
       "pool": "P1",
-      "group": "practice_non_native"
+      "group": "practice_non_native",
+      "speaker_number": 7,
+      "source_recording": "KYO_M15_Arabic_B1_015.wav",
+      "prerating_comp": 71.75,
+      "prerating_accent": 44.79
     },
     {
       "file": "audio/practice_05.wav",
@@ -57,7 +73,11 @@
       "duration_s": 4.3085,
       "sentence_id": "S079",
       "pool": "P1",
-      "group": "practice_non_native"
+      "group": "practice_non_native",
+      "speaker_number": 8,
+      "source_recording": "OSA_F01_Sinhala_B1_079.wav",
+      "prerating_comp": 69.75,
+      "prerating_accent": 42.38
     },
     {
       "file": "audio/practice_06.wav",
@@ -65,7 +85,11 @@
       "duration_s": 2.0600625,
       "sentence_id": "S093",
       "pool": "P1",
-      "group": "japanese"
+      "group": "japanese",
+      "speaker_number": 5,
+      "source_recording": "RIT_M03_JP_B1_093.wav",
+      "prerating_comp": 92.88,
+      "prerating_accent": 95.29
     },
     {
       "file": "audio/practice_07.wav",
@@ -73,7 +97,11 @@
       "duration_s": 2.10025,
       "sentence_id": "S091",
       "pool": "P1",
-      "group": "japanese"
+      "group": "japanese",
+      "speaker_number": 6,
+      "source_recording": "TOH_F06_JP_B1_091.wav",
+      "prerating_comp": 58.71,
+      "prerating_accent": 66.29
     },
     {
       "file": "audio/practice_08.wav",
@@ -81,7 +109,11 @@
       "duration_s": 2.8098125,
       "sentence_id": "S101",
       "pool": "P2",
-      "group": "japanese"
+      "group": "japanese",
+      "speaker_number": 9,
+      "source_recording": "TOH_F07_JP_B1_101.wav",
+      "prerating_comp": 79.67,
+      "prerating_accent": 81.63
     },
     {
       "file": "audio/practice_09.wav",
@@ -89,7 +121,11 @@
       "duration_s": 2.7715,
       "sentence_id": "S037",
       "pool": "P2",
-      "group": "practice_non_native"
+      "group": "practice_non_native",
+      "speaker_number": 4,
+      "source_recording": "TOH_M03_Sundanese_B1_037.wav",
+      "prerating_comp": 25.08,
+      "prerating_accent": 34.83
     },
     {
       "file": "audio/practice_10.wav",
@@ -97,7 +133,11 @@
       "duration_s": 4.8,
       "sentence_id": "S051",
       "pool": "P2",
-      "group": "practice_non_native"
+      "group": "practice_non_native",
+      "speaker_number": 2,
+      "source_recording": "TOH_M07_Azerbaijani_B1_051.wav",
+      "prerating_comp": 72.46,
+      "prerating_accent": 49.38
     }
   ],
   "forms": [
@@ -109,52 +149,44 @@
         "right": "理解しやすい",
         "trials": [
           {
+            "file": "audio/practice_01.wav",
+            "role": "explanation",
+            "delay_s": 0.5,
+            "iti_s": 2
+          },
+          {
             "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 2.1
           },
           {
-            "file": "audio/practice_04.wav",
-            "delay_s": 2.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_05.wav",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
             "file": "audio/practice_07.wav",
+            "role": "practice",
             "delay_s": 2.0,
             "iti_s": 3
           },
           {
             "file": "audio/practice_01.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 2
           },
           {
             "file": "audio/practice_03.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 2.1
           },
           {
-            "file": "audio/practice_10.wav",
+            "file": "audio/practice_06.wav",
+            "role": "practice",
             "delay_s": 0.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_02.wav",
-            "delay_s": 2.5,
-            "iti_s": 2
-          },
-          {
-            "file": "audio/practice_08.wav",
-            "delay_s": 2.0,
-            "iti_s": 3
+            "iti_s": 2.1
           },
           {
             "file": "audio/practice_09.wav",
+            "role": "practice",
             "delay_s": 1.5,
             "iti_s": 2.3
           }
@@ -167,54 +199,46 @@
         "right": "訛りがない",
         "trials": [
           {
-            "file": "audio/practice_03.wav",
+            "file": "audio/practice_01.wav",
+            "role": "explanation",
+            "delay_s": 0.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 2.1
           },
           {
             "file": "audio/practice_10.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_02.wav",
-            "delay_s": 2.5,
-            "iti_s": 2
-          },
-          {
-            "file": "audio/practice_08.wav",
-            "delay_s": 2.0,
-            "iti_s": 3
-          },
-          {
-            "file": "audio/practice_09.wav",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
             "file": "audio/practice_06.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 2.1
           },
           {
-            "file": "audio/practice_04.wav",
+            "file": "audio/practice_02.wav",
+            "role": "practice",
             "delay_s": 2.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_05.wav",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_07.wav",
-            "delay_s": 2.0,
-            "iti_s": 3
+            "iti_s": 2
           },
           {
             "file": "audio/practice_01.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 2
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 3
           }
         ]
       }
@@ -227,54 +251,46 @@
         "right": "訛りがない",
         "trials": [
           {
-            "file": "audio/practice_03.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_09.wav",
-            "delay_s": 0.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_10.wav",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_08.wav",
-            "delay_s": 0.5,
-            "iti_s": 3
-          },
-          {
-            "file": "audio/practice_02.wav",
+            "file": "audio/practice_01.wav",
+            "role": "explanation",
             "delay_s": 2.5,
             "iti_s": 2
           },
           {
             "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_01.wav",
+            "file": "audio/practice_10.wav",
+            "role": "practice",
+            "delay_s": 1.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "role": "practice",
             "delay_s": 2.5,
             "iti_s": 2
           },
           {
-            "file": "audio/practice_04.wav",
-            "delay_s": 0.5,
-            "iti_s": 2.3
+            "file": "audio/practice_01.wav",
+            "role": "practice",
+            "delay_s": 2.5,
+            "iti_s": 2
           },
           {
             "file": "audio/practice_07.wav",
+            "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_05.wav",
-            "delay_s": 1.5,
-            "iti_s": 3.4
           }
         ]
       },
@@ -285,54 +301,46 @@
         "right": "理解しやすい",
         "trials": [
           {
-            "file": "audio/practice_06.wav",
-            "delay_s": 0.5,
-            "iti_s": 3
-          },
-          {
             "file": "audio/practice_01.wav",
+            "role": "explanation",
             "delay_s": 2.5,
             "iti_s": 2
           },
           {
-            "file": "audio/practice_04.wav",
+            "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 0.5,
-            "iti_s": 2.3
+            "iti_s": 3
           },
           {
             "file": "audio/practice_07.wav",
+            "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
           },
           {
-            "file": "audio/practice_05.wav",
-            "delay_s": 1.5,
-            "iti_s": 3.4
+            "file": "audio/practice_01.wav",
+            "role": "practice",
+            "delay_s": 2.5,
+            "iti_s": 2
           },
           {
             "file": "audio/practice_03.wav",
+            "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
           },
           {
-            "file": "audio/practice_09.wav",
-            "delay_s": 0.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_10.wav",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_06.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_02.wav",
-            "delay_s": 2.5,
-            "iti_s": 2
+            "file": "audio/practice_09.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 3.4
           }
         ]
       }
@@ -345,53 +353,45 @@
         "right": "理解しやすい",
         "trials": [
           {
-            "file": "audio/practice_03.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_02.wav",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_10.wav",
-            "delay_s": 2.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_08.wav",
-            "delay_s": 0.5,
-            "iti_s": 3
-          },
-          {
-            "file": "audio/practice_09.wav",
-            "delay_s": 0.5,
-            "iti_s": 2
-          },
-          {
-            "file": "audio/practice_07.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_05.wav",
-            "delay_s": 2.5,
-            "iti_s": 2.3
-          },
-          {
             "file": "audio/practice_01.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 3.4
           },
           {
             "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_04.wav",
-            "delay_s": 1.5,
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_03.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "role": "practice",
+            "delay_s": 0.5,
             "iti_s": 2
           }
         ]
@@ -403,54 +403,46 @@
         "right": "訛りがない",
         "trials": [
           {
-            "file": "audio/practice_07.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_05.wav",
-            "delay_s": 2.5,
-            "iti_s": 2.3
-          },
-          {
             "file": "audio/practice_01.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 3.4
           },
           {
             "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_04.wav",
-            "delay_s": 1.5,
-            "iti_s": 2
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_02.wav",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
             "file": "audio/practice_10.wav",
+            "role": "practice",
             "delay_s": 2.5,
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_06.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_09.wav",
+            "file": "audio/practice_02.wav",
+            "role": "practice",
+            "delay_s": 1.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "role": "practice",
             "delay_s": 0.5,
-            "iti_s": 2
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 2.1
           }
         ]
       }
@@ -463,54 +455,46 @@
         "right": "訛りがない",
         "trials": [
           {
-            "file": "audio/practice_07.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
             "file": "audio/practice_01.wav",
+            "role": "explanation",
             "delay_s": 2.5,
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_04.wav",
-            "delay_s": 1.5,
-            "iti_s": 2
-          },
-          {
             "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_05.wav",
-            "delay_s": 0.5,
+            "file": "audio/practice_10.wav",
+            "role": "practice",
+            "delay_s": 1.5,
             "iti_s": 2.3
           },
           {
-            "file": "audio/practice_03.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_09.wav",
-            "delay_s": 2.5,
-            "iti_s": 2
-          },
-          {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_06.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
             "file": "audio/practice_02.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_10.wav",
-            "delay_s": 1.5,
-            "iti_s": 2.3
+            "file": "audio/practice_01.wav",
+            "role": "practice",
+            "delay_s": 2.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 2.1
           }
         ]
       },
@@ -521,54 +505,46 @@
         "right": "理解しやすい",
         "trials": [
           {
-            "file": "audio/practice_03.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_09.wav",
+            "file": "audio/practice_01.wav",
+            "role": "explanation",
             "delay_s": 2.5,
-            "iti_s": 2
+            "iti_s": 3.4
           },
           {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_02.wav",
-            "delay_s": 0.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_10.wav",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
             "file": "audio/practice_07.wav",
+            "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
           },
           {
             "file": "audio/practice_01.wav",
+            "role": "practice",
             "delay_s": 2.5,
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_04.wav",
-            "delay_s": 1.5,
-            "iti_s": 2
+            "file": "audio/practice_03.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 2.1
           },
           {
             "file": "audio/practice_06.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_05.wav",
-            "delay_s": 0.5,
-            "iti_s": 2.3
+            "file": "audio/practice_09.wav",
+            "role": "practice",
+            "delay_s": 2.5,
+            "iti_s": 2
           }
         ]
       }
@@ -581,54 +557,46 @@
         "right": "理解しにくい",
         "trials": [
           {
-            "file": "audio/practice_06.wav",
-            "delay_s": 0.5,
-            "iti_s": 3
-          },
-          {
-            "file": "audio/practice_04.wav",
-            "delay_s": 2.5,
-            "iti_s": 2
-          },
-          {
             "file": "audio/practice_01.wav",
+            "role": "explanation",
             "delay_s": 1.5,
             "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "role": "explanation",
+            "delay_s": 0.5,
+            "iti_s": 3
           },
           {
             "file": "audio/practice_07.wav",
+            "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
           },
           {
-            "file": "audio/practice_05.wav",
-            "delay_s": 0.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_08.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_09.wav",
-            "delay_s": 2.5,
+            "file": "audio/practice_01.wav",
+            "role": "practice",
+            "delay_s": 1.5,
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_10.wav",
-            "delay_s": 1.5,
-            "iti_s": 2
-          },
-          {
             "file": "audio/practice_03.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_02.wav",
+            "file": "audio/practice_06.wav",
+            "role": "practice",
             "delay_s": 0.5,
-            "iti_s": 2.3
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "role": "practice",
+            "delay_s": 2.5,
+            "iti_s": 3.4
           }
         ]
       },
@@ -639,54 +607,46 @@
         "right": "訛りが強い",
         "trials": [
           {
-            "file": "audio/practice_08.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_09.wav",
-            "delay_s": 2.5,
+            "file": "audio/practice_01.wav",
+            "role": "explanation",
+            "delay_s": 1.5,
             "iti_s": 3.4
           },
           {
+            "file": "audio/practice_06.wav",
+            "role": "explanation",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
             "file": "audio/practice_10.wav",
+            "role": "practice",
             "delay_s": 1.5,
             "iti_s": 2
           },
           {
-            "file": "audio/practice_03.wav",
+            "file": "audio/practice_06.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
             "file": "audio/practice_02.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 2.3
           },
           {
-            "file": "audio/practice_06.wav",
-            "delay_s": 0.5,
-            "iti_s": 3
-          },
-          {
-            "file": "audio/practice_04.wav",
-            "delay_s": 2.5,
-            "iti_s": 2
-          },
-          {
             "file": "audio/practice_01.wav",
+            "role": "practice",
             "delay_s": 1.5,
             "iti_s": 3.4
           },
           {
             "file": "audio/practice_07.wav",
+            "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_05.wav",
-            "delay_s": 0.5,
-            "iti_s": 2.3
           }
         ]
       }
@@ -699,54 +659,46 @@
         "right": "訛りが強い",
         "trials": [
           {
-            "file": "audio/practice_03.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_02.wav",
-            "delay_s": 1.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_10.wav",
-            "delay_s": 2.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_08.wav",
-            "delay_s": 0.5,
-            "iti_s": 3
-          },
-          {
-            "file": "audio/practice_09.wav",
-            "delay_s": 0.5,
-            "iti_s": 2
-          },
-          {
-            "file": "audio/practice_07.wav",
-            "delay_s": 0.5,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_04.wav",
-            "delay_s": 1.5,
-            "iti_s": 3.4
-          },
-          {
             "file": "audio/practice_01.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 2.3
           },
           {
             "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 2.0,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_05.wav",
+            "file": "audio/practice_10.wav",
+            "role": "practice",
             "delay_s": 2.5,
-            "iti_s": 2
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "role": "practice",
+            "delay_s": 1.5,
+            "iti_s": 3.4
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 2.1
           }
         ]
       },
@@ -757,52 +709,44 @@
         "right": "理解しにくい",
         "trials": [
           {
-            "file": "audio/practice_07.wav",
-            "delay_s": 0.5,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_04.wav",
-            "delay_s": 1.5,
-            "iti_s": 3.4
-          },
-          {
             "file": "audio/practice_01.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 2.3
           },
           {
             "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 2.0,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_05.wav",
-            "delay_s": 2.5,
-            "iti_s": 2
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_01.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 2.3
           },
           {
             "file": "audio/practice_03.wav",
+            "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
           },
           {
-            "file": "audio/practice_02.wav",
-            "delay_s": 1.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_10.wav",
-            "delay_s": 2.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_08.wav",
-            "delay_s": 0.5,
+            "file": "audio/practice_06.wav",
+            "role": "practice",
+            "delay_s": 2.0,
             "iti_s": 3
           },
           {
             "file": "audio/practice_09.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 2
           }
@@ -817,53 +761,45 @@
         "right": "理解しにくい",
         "trials": [
           {
-            "file": "audio/practice_03.wav",
-            "delay_s": 0.5,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_09.wav",
-            "delay_s": 2.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_10.wav",
+            "file": "audio/practice_01.wav",
+            "role": "explanation",
             "delay_s": 1.5,
             "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_08.wav",
-            "delay_s": 2.0,
-            "iti_s": 3
-          },
-          {
-            "file": "audio/practice_02.wav",
-            "delay_s": 0.5,
-            "iti_s": 2
           },
           {
             "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_04.wav",
-            "delay_s": 2.5,
-            "iti_s": 2
-          },
-          {
-            "file": "audio/practice_01.wav",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
             "file": "audio/practice_07.wav",
+            "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
           },
           {
-            "file": "audio/practice_05.wav",
+            "file": "audio/practice_01.wav",
+            "role": "practice",
+            "delay_s": 1.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_03.wav",
+            "role": "practice",
             "delay_s": 0.5,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "role": "practice",
+            "delay_s": 2.5,
             "iti_s": 3.4
           }
         ]
@@ -875,54 +811,46 @@
         "right": "訛りが強い",
         "trials": [
           {
+            "file": "audio/practice_01.wav",
+            "role": "explanation",
+            "delay_s": 1.5,
+            "iti_s": 2.3
+          },
+          {
             "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 3
           },
           {
-            "file": "audio/practice_04.wav",
-            "delay_s": 2.5,
+            "file": "audio/practice_10.wav",
+            "role": "practice",
+            "delay_s": 1.5,
+            "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "role": "practice",
+            "delay_s": 0.5,
             "iti_s": 2
           },
           {
             "file": "audio/practice_01.wav",
+            "role": "practice",
             "delay_s": 1.5,
             "iti_s": 2.3
           },
           {
             "file": "audio/practice_07.wav",
+            "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_05.wav",
-            "delay_s": 0.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "delay_s": 0.5,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_09.wav",
-            "delay_s": 2.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_10.wav",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_08.wav",
-            "delay_s": 2.0,
-            "iti_s": 3
-          },
-          {
-            "file": "audio/practice_02.wav",
-            "delay_s": 0.5,
-            "iti_s": 2
           }
         ]
       }
@@ -935,54 +863,46 @@
         "right": "訛りが強い",
         "trials": [
           {
-            "file": "audio/practice_07.wav",
-            "delay_s": 0.5,
-            "iti_s": 3
-          },
-          {
-            "file": "audio/practice_05.wav",
-            "delay_s": 1.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_04.wav",
-            "delay_s": 2.5,
-            "iti_s": 2
-          },
-          {
-            "file": "audio/practice_06.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
             "file": "audio/practice_01.wav",
+            "role": "explanation",
             "delay_s": 0.5,
             "iti_s": 2.3
           },
           {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_06.wav",
+            "role": "explanation",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_10.wav",
+            "role": "practice",
+            "delay_s": 1.5,
+            "iti_s": 2
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
           },
           {
             "file": "audio/practice_02.wav",
+            "role": "practice",
             "delay_s": 2.5,
             "iti_s": 2.3
           },
           {
-            "file": "audio/practice_10.wav",
-            "delay_s": 1.5,
-            "iti_s": 2
+            "file": "audio/practice_01.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 2.3
           },
           {
-            "file": "audio/practice_03.wav",
+            "file": "audio/practice_07.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 3
-          },
-          {
-            "file": "audio/practice_09.wav",
-            "delay_s": 0.5,
-            "iti_s": 3.4
           }
         ]
       },
@@ -993,54 +913,46 @@
         "right": "理解しにくい",
         "trials": [
           {
-            "file": "audio/practice_08.wav",
-            "delay_s": 2.0,
-            "iti_s": 2.1
-          },
-          {
-            "file": "audio/practice_02.wav",
-            "delay_s": 2.5,
+            "file": "audio/practice_01.wav",
+            "role": "explanation",
+            "delay_s": 0.5,
             "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_10.wav",
-            "delay_s": 1.5,
-            "iti_s": 2
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "delay_s": 0.5,
-            "iti_s": 3
-          },
-          {
-            "file": "audio/practice_09.wav",
-            "delay_s": 0.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_07.wav",
-            "delay_s": 0.5,
-            "iti_s": 3
-          },
-          {
-            "file": "audio/practice_05.wav",
-            "delay_s": 1.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_04.wav",
-            "delay_s": 2.5,
-            "iti_s": 2
           },
           {
             "file": "audio/practice_06.wav",
+            "role": "explanation",
             "delay_s": 2.0,
             "iti_s": 2.1
           },
           {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
             "file": "audio/practice_01.wav",
+            "role": "practice",
             "delay_s": 0.5,
             "iti_s": 2.3
+          },
+          {
+            "file": "audio/practice_03.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_06.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_09.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 3.4
           }
         ]
       }

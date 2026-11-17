@@ -7,6 +7,11 @@ if (taskTitle) {
   document.title = `${taskTitle}の練習`;
   $('welcome-title').textContent = document.title;
   $('welcome-title').hidden = false;
+} else if (requestedTask === null) {
+  $('welcome-title').textContent = '練習する課題を選んでください';
+  $('welcome-title').hidden = false;
+  $('task-links').hidden = false;
+  $('start-form').hidden = true;
 }
 const panels = ['welcome', 'message', 'listening', 'fixation', 'rating'];
 const cells = [...document.querySelectorAll('#scale span')];
@@ -51,7 +56,7 @@ async function loadAudio() {
 $('start-form').addEventListener('submit', async event => {
   event.preventDefault();
   if (phase !== 'welcome') return;
-  if (requestedTask !== null && !taskTitle) {
+  if (!taskTitle) {
     $('start-error').textContent = '練習のリンクが正しくありません。案内されたリンクから開き直してください。';
     return;
   }
@@ -101,6 +106,8 @@ function instructions() {
     '音声の後は、評定画面が出るまでお待ちください。\n' +
     `評定画面が出てから${data.rating_s}秒以内に確定してください。\n` +
     '中央から左右に倒すたびに1段階動かし、人差し指のボタンで確定します。\n' +
+    '続けて動かすときは、一度中央に戻してから再度倒してください。\n' +
+    '最初は3です。動かさずボタンで確定できます。\n' +
     `1：${block.left}　／　5：${block.right}\n` +
     '確定すると選んだマスが緑色になります。＋の間はお待ちください。',
     '人差し指のボタンで練習を始めます。');
