@@ -1,5 +1,5 @@
 {
-  "version": "joystick-practice-20261117-all10",
+  "version": "joystick-practice-20261117-balanced",
   "instruction_version": "prerating_ja_v4",
   "scale_max": 5,
   "rating_s": 3.0,
@@ -161,16 +161,10 @@
             "iti_s": 2.1
           },
           {
-            "file": "audio/practice_10.wav",
+            "file": "audio/practice_07.wav",
             "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 2.1
+            "delay_s": 2.0,
+            "iti_s": 3
           },
           {
             "file": "audio/practice_09.wav",
@@ -179,10 +173,16 @@
             "iti_s": 2.3
           },
           {
-            "file": "audio/practice_07.wav",
+            "file": "audio/practice_08.wav",
             "role": "practice",
             "delay_s": 2.0,
             "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "role": "practice",
+            "delay_s": 2.5,
+            "iti_s": 2
           },
           {
             "file": "audio/practice_04.wav",
@@ -217,10 +217,10 @@
             "iti_s": 2.3
           },
           {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_03.wav",
             "role": "practice",
-            "delay_s": 2.0,
-            "iti_s": 3
+            "delay_s": 0.5,
+            "iti_s": 2.1
           },
           {
             "file": "audio/practice_02.wav",
@@ -229,16 +229,16 @@
             "iti_s": 2
           },
           {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 3
+          },
+          {
             "file": "audio/practice_10.wav",
             "role": "practice",
             "delay_s": 0.5,
             "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 2.1
           }
         ]
       }
@@ -269,10 +269,10 @@
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_03.wav",
             "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 3
+            "delay_s": 2.0,
+            "iti_s": 2.1
           },
           {
             "file": "audio/practice_02.wav",
@@ -281,16 +281,16 @@
             "iti_s": 2
           },
           {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
             "file": "audio/practice_10.wav",
             "role": "practice",
             "delay_s": 1.5,
             "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 2.0,
-            "iti_s": 2.1
           }
         ]
       },
@@ -313,13 +313,7 @@
             "iti_s": 3
           },
           {
-            "file": "audio/practice_10.wav",
-            "role": "practice",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_03.wav",
+            "file": "audio/practice_07.wav",
             "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
@@ -331,10 +325,16 @@
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_07.wav",
+            "file": "audio/practice_08.wav",
             "role": "practice",
-            "delay_s": 2.0,
-            "iti_s": 2.1
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "role": "practice",
+            "delay_s": 2.5,
+            "iti_s": 2
           },
           {
             "file": "audio/practice_04.wav",
@@ -365,13 +365,7 @@
             "iti_s": 3
           },
           {
-            "file": "audio/practice_10.wav",
-            "role": "practice",
-            "delay_s": 2.5,
-            "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_03.wav",
+            "file": "audio/practice_07.wav",
             "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
@@ -383,10 +377,16 @@
             "iti_s": 2
           },
           {
-            "file": "audio/practice_07.wav",
+            "file": "audio/practice_08.wav",
             "role": "practice",
-            "delay_s": 2.0,
-            "iti_s": 2.1
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "role": "practice",
+            "delay_s": 1.5,
+            "iti_s": 2.3
           },
           {
             "file": "audio/practice_04.wav",
@@ -421,10 +421,10 @@
             "iti_s": 2.3
           },
           {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_03.wav",
             "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 3
+            "delay_s": 2.0,
+            "iti_s": 2.1
           },
           {
             "file": "audio/practice_02.wav",
@@ -433,16 +433,16 @@
             "iti_s": 2.3
           },
           {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
             "file": "audio/practice_10.wav",
             "role": "practice",
             "delay_s": 2.5,
             "iti_s": 3.4
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 2.0,
-            "iti_s": 2.1
           }
         ]
       }
@@ -473,10 +473,10 @@
             "iti_s": 2.3
           },
           {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_03.wav",
             "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 3
+            "delay_s": 2.0,
+            "iti_s": 2.1
           },
           {
             "file": "audio/practice_02.wav",
@@ -485,16 +485,16 @@
             "iti_s": 3.4
           },
           {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
             "file": "audio/practice_10.wav",
             "role": "practice",
             "delay_s": 1.5,
             "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 2.0,
-            "iti_s": 2.1
           }
         ]
       },
@@ -517,13 +517,7 @@
             "iti_s": 3
           },
           {
-            "file": "audio/practice_10.wav",
-            "role": "practice",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_03.wav",
+            "file": "audio/practice_07.wav",
             "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
@@ -535,10 +529,16 @@
             "iti_s": 2
           },
           {
-            "file": "audio/practice_07.wav",
+            "file": "audio/practice_08.wav",
             "role": "practice",
-            "delay_s": 2.0,
-            "iti_s": 2.1
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 3.4
           },
           {
             "file": "audio/practice_04.wav",
@@ -569,16 +569,10 @@
             "iti_s": 3
           },
           {
-            "file": "audio/practice_10.wav",
+            "file": "audio/practice_07.wav",
             "role": "practice",
-            "delay_s": 1.5,
-            "iti_s": 2
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 3
+            "delay_s": 2.0,
+            "iti_s": 2.1
           },
           {
             "file": "audio/practice_09.wav",
@@ -587,10 +581,16 @@
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_07.wav",
+            "file": "audio/practice_08.wav",
             "role": "practice",
             "delay_s": 2.0,
             "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 2.3
           },
           {
             "file": "audio/practice_04.wav",
@@ -625,10 +625,10 @@
             "iti_s": 2.3
           },
           {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_03.wav",
             "role": "practice",
-            "delay_s": 2.0,
-            "iti_s": 2.1
+            "delay_s": 0.5,
+            "iti_s": 3
           },
           {
             "file": "audio/practice_02.wav",
@@ -637,16 +637,16 @@
             "iti_s": 2.3
           },
           {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
             "file": "audio/practice_10.wav",
             "role": "practice",
             "delay_s": 1.5,
             "iti_s": 2
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 3
           }
         ]
       }
@@ -677,10 +677,10 @@
             "iti_s": 2
           },
           {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_03.wav",
             "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 3
+            "delay_s": 2.0,
+            "iti_s": 2.1
           },
           {
             "file": "audio/practice_02.wav",
@@ -689,16 +689,16 @@
             "iti_s": 3.4
           },
           {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 2.1
+          },
+          {
             "file": "audio/practice_10.wav",
             "role": "practice",
             "delay_s": 2.5,
             "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 2.0,
-            "iti_s": 2.1
           }
         ]
       },
@@ -721,15 +721,9 @@
             "iti_s": 3
           },
           {
-            "file": "audio/practice_10.wav",
+            "file": "audio/practice_07.wav",
             "role": "practice",
-            "delay_s": 2.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 2.0,
+            "delay_s": 0.5,
             "iti_s": 2.1
           },
           {
@@ -739,10 +733,16 @@
             "iti_s": 2
           },
           {
-            "file": "audio/practice_07.wav",
+            "file": "audio/practice_08.wav",
             "role": "practice",
             "delay_s": 0.5,
-            "iti_s": 2.1
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "role": "practice",
+            "delay_s": 1.5,
+            "iti_s": 3.4
           },
           {
             "file": "audio/practice_04.wav",
@@ -773,15 +773,9 @@
             "iti_s": 3
           },
           {
-            "file": "audio/practice_10.wav",
+            "file": "audio/practice_07.wav",
             "role": "practice",
-            "delay_s": 1.5,
-            "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 0.5,
+            "delay_s": 2.0,
             "iti_s": 2.1
           },
           {
@@ -791,10 +785,16 @@
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_07.wav",
+            "file": "audio/practice_08.wav",
             "role": "practice",
             "delay_s": 2.0,
-            "iti_s": 2.1
+            "iti_s": 3
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 2
           },
           {
             "file": "audio/practice_04.wav",
@@ -829,10 +829,10 @@
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_03.wav",
             "role": "practice",
-            "delay_s": 2.0,
-            "iti_s": 3
+            "delay_s": 0.5,
+            "iti_s": 2.1
           },
           {
             "file": "audio/practice_02.wav",
@@ -841,16 +841,16 @@
             "iti_s": 2
           },
           {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
             "file": "audio/practice_10.wav",
             "role": "practice",
             "delay_s": 1.5,
             "iti_s": 2.3
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 2.1
           }
         ]
       }
@@ -881,10 +881,10 @@
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_08.wav",
+            "file": "audio/practice_03.wav",
             "role": "practice",
-            "delay_s": 2.0,
-            "iti_s": 2.1
+            "delay_s": 0.5,
+            "iti_s": 3
           },
           {
             "file": "audio/practice_02.wav",
@@ -893,16 +893,16 @@
             "iti_s": 2.3
           },
           {
+            "file": "audio/practice_07.wav",
+            "role": "practice",
+            "delay_s": 0.5,
+            "iti_s": 3
+          },
+          {
             "file": "audio/practice_10.wav",
             "role": "practice",
             "delay_s": 1.5,
             "iti_s": 2
-          },
-          {
-            "file": "audio/practice_03.wav",
-            "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 3
           }
         ]
       },
@@ -925,13 +925,7 @@
             "iti_s": 2.1
           },
           {
-            "file": "audio/practice_10.wav",
-            "role": "practice",
-            "delay_s": 1.5,
-            "iti_s": 2
-          },
-          {
-            "file": "audio/practice_03.wav",
+            "file": "audio/practice_07.wav",
             "role": "practice",
             "delay_s": 0.5,
             "iti_s": 3
@@ -943,10 +937,16 @@
             "iti_s": 3.4
           },
           {
-            "file": "audio/practice_07.wav",
+            "file": "audio/practice_08.wav",
             "role": "practice",
-            "delay_s": 0.5,
-            "iti_s": 3
+            "delay_s": 2.0,
+            "iti_s": 2.1
+          },
+          {
+            "file": "audio/practice_02.wav",
+            "role": "practice",
+            "delay_s": 2.5,
+            "iti_s": 2.3
           },
           {
             "file": "audio/practice_04.wav",

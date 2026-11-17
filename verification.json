@@ -1,31 +1,31 @@
 {
-  "recorded_at": "2026-11-17T09:34:33.260086+00:00",
-  "version": "joystick-practice-20261117-all10",
+  "recorded_at": "2026-11-17T09:46:11.793151+00:00",
+  "version": "joystick-practice-20261117-balanced",
   "instruction_version": "prerating_ja_v4",
-  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/3fe229c94d05f6529929b8eb92d57904b0dc53c5/verification.json",
+  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/329413e48358e336436c97d459d61a0c2bf57a37/verification.json",
   "changes": [
-    "Explanation uses Speakers1/5 only; Comp solo2/3/4/6/7, Acc solo8/9/10/2/3.",
-    "All ten approved recordings across tasks; seven unique per task; no within-task repetition.",
-    "MRI native practice uses identical forms and a logged, indefinite headset pause."
+    "Select by task-specific pre-ratings rather than the example ID lists.",
+    "Compare all 560 assignments with Speakers1/5 reserved for explanation, five unique solo recordings per task and all ten recordings used overall.",
+    "Best solo sets: Comp4/6/7/9/10; Acc2/3/6/8/10. Present in mixed score order."
   ],
   "selection": {
     "comprehensibility": [
       1,
       5,
-      2,
-      3,
-      4,
       6,
+      4,
+      9,
+      10,
       7
     ],
     "accentedness": [
       1,
       5,
       8,
-      9,
+      3,
       10,
-      2,
-      3
+      6,
+      2
     ]
   },
   "source_sha256": {
@@ -33,7 +33,7 @@
     "style.css": "775c65e10dc06b6106917577a27e17c600a1701e9b0209fc556ef608380c50e5",
     "app.mjs": "97f76737fe33a1a6a22d7322d20b9db108d9e3524e16089eac78d9dadc21b1fb",
     "core.mjs": "85e203c2dd67a3617308978c206607ae83235b478d6f7c699c0af08ab817ddcb",
-    "practice.json": "0b664560e701f64c9b51c0b42ec520b1c5ff8ea528cd2f93869dcdf39b8d4ce5"
+    "practice.json": "b407037b52cf231c5a52eede0ae56f15c625e01660eef68eba2e24f7a9b1f99a"
   },
   "verification": {
     "node_tests": 10,
@@ -53,7 +53,14 @@
     "native_test_failures": 0,
     "native_web_profiles_identical": true,
     "all_wav_hashes_verified": true,
-    "no_main_recording_or_sentence_overlap": true
+    "no_main_recording_or_sentence_overlap": true,
+    "selection_dependent_tests_rerun": [
+      "test_experiment.py",
+      "test_native_practice.py",
+      "test_practice_materials.py",
+      "node --test tests/*.test.mjs"
+    ],
+    "allocation_optimum_independently_tested": true
   },
   "evidence_reuse": {
     "web_runtime_html_css_unchanged": true,
@@ -68,5 +75,89 @@
     "Physical MRI/932 or Trainer input",
     "Actual participant rating distribution or acoustic timing/loudness",
     "Full-session participant/scanner handover workflow"
-  ]
+  ],
+  "selection_balance": {
+    "criterion": "Minimize the sum across both tasks of squared distances between sorted solo pre-ratings and five evenly spaced band centers: 10,30,50,70,90. Selection criterion only, not a conversion or answer key.",
+    "constraints": [
+      "Speakers1/5 are explanation only in both tasks.",
+      "Five distinct solo recordings per task.",
+      "All remaining eight recordings occur across the two tasks."
+    ],
+    "feasible_allocations": 560,
+    "old_losses": [
+      1764.5687000000003,
+      806.3584999999999
+    ],
+    "selected": {
+      "total_loss": 1936.5576,
+      "comprehensibility": [
+        4,
+        6,
+        7,
+        9,
+        10
+      ],
+      "accentedness": [
+        2,
+        3,
+        6,
+        8,
+        10
+      ],
+      "losses": [
+        1251.6919,
+        684.8657000000001
+      ]
+    },
+    "sensitivity": [
+      {
+        "targets": [
+          10.9,
+          30.7,
+          50.5,
+          70.3,
+          90.1
+        ],
+        "total_loss": 1811.3095999999998,
+        "comprehensibility": [
+          4,
+          6,
+          7,
+          9,
+          10
+        ],
+        "accentedness": [
+          2,
+          3,
+          6,
+          8,
+          10
+        ]
+      },
+      {
+        "targets": [
+          10.5,
+          30.5,
+          50.5,
+          70.5,
+          90.5
+        ],
+        "total_loss": 1870.4576000000002,
+        "comprehensibility": [
+          4,
+          6,
+          7,
+          9,
+          10
+        ],
+        "accentedness": [
+          2,
+          3,
+          6,
+          8,
+          10
+        ]
+      }
+    ]
+  }
 }

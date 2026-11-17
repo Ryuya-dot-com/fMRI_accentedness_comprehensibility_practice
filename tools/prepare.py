@@ -25,8 +25,9 @@ preratings = {
     'KYO_F03_Russian_B1_045': (10, 59.50, 31.92),
 }
 selection = {
-    'comprehensibility': [1, 5, 2, 3, 4, 6, 7],
-    'accentedness': [1, 5, 8, 9, 10, 2, 3],
+    # Best of 560 allocations against solo targets 10/30/50/70/90; present in mixed order.
+    'comprehensibility': [1, 5, 6, 4, 9, 10, 7],
+    'accentedness': [1, 5, 8, 3, 10, 6, 2],
 }
 cfg = dict(mri.load_config(experiment / 'config.json'), scale_max=5)
 rows = mri.load_stimuli(experiment / 'stimuli.csv', cfg, active_phase='practice')
@@ -70,7 +71,7 @@ for participant in range(1, 9):
                                     delay_s=t['rating_delay_s'], iti_s=t['jitter_s'])
                                for i, speaker in enumerate(selection[p['task']])
                                for t in [timing[speakers[speaker]]]]) for p in plans])
-payload = dict(version='joystick-practice-20261117-all10', instruction_version=mri.INSTRUCTION_VERSION, scale_max=5,
+payload = dict(version='joystick-practice-20261117-balanced', instruction_version=mri.INSTRUCTION_VERSION, scale_max=5,
                rating_s=cfg['rating_duration_s'], audio_gain=cfg['audio_volume'], initial_rest_s=cfg['initial_rest_s'],
                final_rest_s=cfg['final_rest_s'], deadzone=cfg['deadzone'],
                step_threshold=cfg['step_threshold'], tasks=tasks, audio=audio, forms=forms)

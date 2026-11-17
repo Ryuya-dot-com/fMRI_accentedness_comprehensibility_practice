@@ -58,7 +58,7 @@ test('pre-rated 2+5 task forms preserve approved WAVs and all eight MRI scale di
     assert.equal(accent.right,i<4 ? '訛りがない':'訛りが強い');
     for (const b of blocks) {
       const numbers = b.trials.map(t=>d.audio.find(a=>a.file===t.file).speaker_number);
-      assert.deepEqual(numbers,b.task==='comprehensibility' ? [1,5,2,3,4,6,7] : [1,5,8,9,10,2,3]);
+      assert.deepEqual(numbers,b.task==='comprehensibility' ? [1,5,6,4,9,10,7] : [1,5,8,3,10,6,2]);
       assert.deepEqual(b.trials.map(t=>t.role),['explanation','explanation',...Array(5).fill('practice')]);
       assert.equal(new Set(b.trials.slice(2).map(t=>t.file)).size,5);
       assert.equal(new Set(b.trials.map(t=>t.file)).size,7);
