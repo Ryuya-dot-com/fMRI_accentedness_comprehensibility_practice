@@ -48,6 +48,7 @@ test('pre-rated 2+5 task forms preserve approved WAVs and all eight MRI scale di
   }
   for (let i=0;i<8;i++) {
     const blocks = d.forms[i];
+    assert.equal(new Set(blocks.flatMap(b=>b.trials.map(t=>t.file))).size,10);
     assert.equal(blocks[0].task,i%2 === 0 ? 'comprehensibility':'accentedness');
     const comp = blocks.find(b=>b.task==='comprehensibility');
     assert.equal(comp.pool,'P1+P2');
@@ -57,9 +58,10 @@ test('pre-rated 2+5 task forms preserve approved WAVs and all eight MRI scale di
     assert.equal(accent.right,i<4 ? '訛りがない':'訛りが強い');
     for (const b of blocks) {
       const numbers = b.trials.map(t=>d.audio.find(a=>a.file===t.file).speaker_number);
-      assert.deepEqual(numbers,b.task==='comprehensibility' ? [1,5,6,1,3,5,4] : [1,5,2,5,10,1,6]);
+      assert.deepEqual(numbers,b.task==='comprehensibility' ? [1,5,2,3,4,6,7] : [1,5,8,9,10,2,3]);
       assert.deepEqual(b.trials.map(t=>t.role),['explanation','explanation',...Array(5).fill('practice')]);
       assert.equal(new Set(b.trials.slice(2).map(t=>t.file)).size,5);
+      assert.equal(new Set(b.trials.map(t=>t.file)).size,7);
       b.trials.forEach(t=>{ assert.ok(t.delay_s>=0 && t.delay_s<=2.5); assert.ok(t.iti_s>=2 && t.iti_s<=6); });
     }
   }

@@ -87,7 +87,7 @@ test('separate links finish after 2+5 trials for all eight ID assignments and ID
     assert.equal(h.el('welcome-title').textContent,`${title}の練習`);
     assert.equal(h.get('blocks.length'),1);
     assert.equal(h.get('blocks[0].task'),task);
-    assert.equal(h.get('new Set(blocks[0].trials.map(t=>t.file)).size'),5);
+    assert.equal(h.get('new Set(blocks[0].trials.map(t=>t.file)).size'),7);
     const isX=id<=4 || id===99;
     const left=task==='accentedness'?(isX?'訛りが強い':'訛りがない'):(isX?'理解しにくい':'理解しやすい');
     assert.equal(h.get('blocks[0].left'),left);

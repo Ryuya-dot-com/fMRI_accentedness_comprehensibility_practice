@@ -25,8 +25,8 @@ preratings = {
     'KYO_F03_Russian_B1_045': (10, 59.50, 31.92),
 }
 selection = {
-    'comprehensibility': [1, 5, 6, 1, 3, 5, 4],
-    'accentedness': [1, 5, 2, 5, 10, 1, 6],
+    'comprehensibility': [1, 5, 2, 3, 4, 6, 7],
+    'accentedness': [1, 5, 8, 9, 10, 2, 3],
 }
 cfg = dict(mri.load_config(experiment / 'config.json'), scale_max=5)
 rows = mri.load_stimuli(experiment / 'stimuli.csv', cfg, active_phase='practice')
@@ -61,7 +61,8 @@ tasks = {name:dict(title=mri.LABELS[name][0], definition=eval(
     dict(TASKS=mri.TASKS, plan=dict(task=name)))) for name in mri.TASKS}
 forms = []
 for participant in range(1, 9):
-    plans = mri.build_runs(rows, cfg, str(participant), 'practice')
+    # Assign timing to all ten recordings before selecting either task's practice set.
+    plans = mri._build_pool_runs(rows, cfg, str(participant), 'practice')
     timing = {t['stimulus_id']:t for p in plans for t in p['trials']}
     forms.append([dict(task=p['task'], pool='P1+P2',
                        left=p['rating_left_label'], right=p['rating_right_label'],
@@ -69,9 +70,10 @@ for participant in range(1, 9):
                                     delay_s=t['rating_delay_s'], iti_s=t['jitter_s'])
                                for i, speaker in enumerate(selection[p['task']])
                                for t in [timing[speakers[speaker]]]]) for p in plans])
-payload = dict(version='joystick-practice-20261117', instruction_version=mri.INSTRUCTION_VERSION, scale_max=5,
+payload = dict(version='joystick-practice-20261117-all10', instruction_version=mri.INSTRUCTION_VERSION, scale_max=5,
                rating_s=cfg['rating_duration_s'], audio_gain=cfg['audio_volume'], initial_rest_s=cfg['initial_rest_s'],
                final_rest_s=cfg['final_rest_s'], deadzone=cfg['deadzone'],
                step_threshold=cfg['step_threshold'], tasks=tasks, audio=audio, forms=forms)
-(site / 'practice.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2)+'\n')
+for destination in (site / 'practice.json', experiment / 'practice.json'):
+    destination.write_text(json.dumps(payload, ensure_ascii=False, indent=2)+'\n')
 print('Prepared 8 forms, each task 2 explanation + 5 solo trials; 10 approved WAVs retained, no main sentences included.')

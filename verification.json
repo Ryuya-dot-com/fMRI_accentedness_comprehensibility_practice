@@ -1,99 +1,72 @@
 {
-  "recorded_at": "2026-11-17T07:26:13.858347+00:00",
-  "version": "joystick-practice-20261117",
+  "recorded_at": "2026-11-17T09:34:33.260086+00:00",
+  "version": "joystick-practice-20261117-all10",
   "instruction_version": "prerating_ja_v4",
-  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/331efbf4525a9449646e0d615de007b27bd55018/verification.json",
+  "previous_verification": "https://github.com/Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice/blob/3fe229c94d05f6529929b8eb92d57904b0dc53c5/verification.json",
   "changes": [
-    "One task per session; root URL offers task links.",
-    "2 guided plus 5 solo presentations: three middle recordings plus two reused endpoint recordings.",
-    "Explain return to neutral between steps and direct midpoint confirmation.",
-    "Remove grammar/vocabulary sentence from Web and MRI definitions.",
-    "MRI audio check repeats the same normalized Japanese Speaker 5 recording as Web practice_06.wav."
+    "Explanation uses Speakers1/5 only; Comp solo2/3/4/6/7, Acc solo8/9/10/2/3.",
+    "All ten approved recordings across tasks; seven unique per task; no within-task repetition.",
+    "MRI native practice uses identical forms and a logged, indefinite headset pause."
   ],
+  "selection": {
+    "comprehensibility": [
+      1,
+      5,
+      2,
+      3,
+      4,
+      6,
+      7
+    ],
+    "accentedness": [
+      1,
+      5,
+      8,
+      9,
+      10,
+      2,
+      3
+    ]
+  },
   "source_sha256": {
     "index.html": "ac1faebc9a2b8c5693437ac673d88a7bd40ac85a432c820910a765cea043bd5d",
     "style.css": "775c65e10dc06b6106917577a27e17c600a1701e9b0209fc556ef608380c50e5",
     "app.mjs": "97f76737fe33a1a6a22d7322d20b9db108d9e3524e16089eac78d9dadc21b1fb",
     "core.mjs": "85e203c2dd67a3617308978c206607ae83235b478d6f7c699c0af08ab817ddcb",
-    "practice.json": "8a8c19c9dc50e149f7349311941b7322ff42e47049b26e84776f926283f71381"
+    "practice.json": "0b664560e701f64c9b51c0b42ec520b1c5ff8ea528cd2f93869dcdf39b8d4ce5"
   },
   "verification": {
     "node_tests": 10,
     "node_test_failures": 0,
     "separate_task_sessions": 18,
     "separate_task_trials": 126,
-    "simulated_cases": "All 8 cells and ID99, both tasks; neutral 3, held/off-center/late inputs, timeouts, pause and interruption checks.",
-    "python_js_comparison": "200 traces / 16000 updates; Rating and StepRating source unchanged.",
-    "MRI_tests": [
-      "test_confirmation.py",
-      "test_instruction_wording.py",
+    "native_tests": [
+      "test_experiment.py",
+      "test_native_practice.py",
+      "test_analysis_export.py",
+      "test_volume_check.py",
       "test_practice_materials.py",
-      "test_experiment.py"
+      "test_input_selection.py",
+      "test_rating_scale.py",
+      "test_instruction_wording.py"
     ],
-    "MRI_test_failures": 0,
-    "MRI_frozen_schedules": "All 8 cells compared to historical schedules in instruction regression; IDs1/5/99 compared exactly before/after; existing saved-plan/config/stimulus hashes unchanged.",
-    "browser": "Chrome headless, actual WAV decoding/playback and real-time timing, muted audio, simulated Trainer, ID99; both tasks finish all seven presentations with expected confirmed values and one headset pause.",
-    "browser_counts": [
-      {
-        "task": "comprehensibility",
-        "plays": 7,
-        "ratings": 7,
-        "confirmed": 7,
-        "headsetPauses": 1
-      },
-      {
-        "task": "accentedness",
-        "plays": 7,
-        "ratings": 7,
-        "confirmed": 7,
-        "headsetPauses": 1
-      }
-    ],
-    "final_layout": [
-      {
-        "task": "comprehensibility",
-        "height": 800,
-        "scrollHeight": 800,
-        "font": "24px",
-        "width": 1280,
-        "scrollWidth": 1280
-      },
-      {
-        "task": "accentedness",
-        "height": 800,
-        "scrollHeight": 800,
-        "font": "24px",
-        "width": 1280,
-        "scrollWidth": 1280
-      }
-    ],
-    "MRI_layout": "Actual PsychoPy instruction expressions rendered at 1280x800; both texts fit and images inspected.",
-    "materials": "Ten approved Web WAV hashes unchanged, no main recording/sentence overlap; Speaker5 Japanese WAV and playback gain exactly match MRI volume check.",
-    "source_loudness_lufs": -30.03,
-    "loudness_evidence": "Reused saved prepared_audio_measurements.csv and normalization provenance for byte-identical WAV; normalization not rerun.",
-    "stylesheet_cache": "HTML versions the final stylesheet URL; no application or trial changes."
+    "native_test_failures": 0,
+    "native_web_profiles_identical": true,
+    "all_wav_hashes_verified": true,
+    "no_main_recording_or_sentence_overlap": true
   },
   "evidence_reuse": {
-    "main_stimuli_config_timing_and_frozen_plans_unchanged": true,
-    "MRI_selection_code_unchanged": true,
-    "long_MRI_run_not_repeated": "No main timing/input changes; prior evidence retained, relevant input/save/abort/audio-check regressions passed."
+    "web_runtime_html_css_unchanged": true,
+    "previous_real_time_browser_and_instruction_layout": "See previous_verification; not rerun for this data-only selection change.",
+    "unchanged_main_plans_exact_ids": [
+      1,
+      5,
+      99
+    ]
   },
-  "wording": {
-    "mri_source_sha256": "e6db36735e5c71750a3714e322a0e7864478ee6f81e50f76b3b3dca3f1cfb537",
-    "new_plan_folder": "participant_plans_prerating_jitter_v1_ja_instructions_v2",
-    "plan_folder_unchanged": true
-  },
-  "not_verified": [
-    "physical Trainer/browser mapping on laboratory PC",
-    "physical MRI/932 input and acquisition synchronization",
-    "ear-level sound pressure and physical audio onset",
-    "full six-run physical scan session",
-    "participant burden, questionnaires and swap/continuous-session timetable"
-  ],
-  "publication": {
-    "repository": "Ryuya-dot-com/fMRI_accentedness_comprehensibility_practice",
-    "url": "https://ryuya-dot-com.github.io/fMRI_accentedness_comprehensibility_practice/",
-    "verification_stage": "Local checks passed; deployment evidence is recorded separately after publication.",
-    "public_verification_record": "tests/artifacts/prerating-v4-public-verification.json"
-  }
+  "unverified": [
+    "Physical MRI/932 or Trainer input",
+    "Actual participant rating distribution or acoustic timing/loudness",
+    "Full-session participant/scanner handover workflow"
+  ]
 }
